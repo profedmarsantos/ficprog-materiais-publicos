@@ -27,11 +27,8 @@ function Get-ModuleActivity {
 
     $integrated = Get-ChildItem -LiteralPath $ModuleDirectory.FullName -File -Filter 'atividade-integrada*.html' |
         Sort-Object Name | Select-Object -First 1
-    if ($integrated) { return $integrated }
-
-    $asynchronous = Join-Path $ModuleDirectory.FullName 'atividade-assincrona.html'
-    if (Test-Path -LiteralPath $asynchronous) { return Get-Item -LiteralPath $asynchronous }
-    return $null
+    if (-not $integrated) { throw "Atividade integrada ausente: $($ModuleDirectory.FullName)" }
+    return $integrated
 }
 
 function Convert-ModuleActivity {
@@ -82,18 +79,15 @@ function Convert-MarkdownResource {
 }
 
 $moduleEntries = @()
-$resourceEntries = @()
 foreach ($moduleDirectory in (Get-ChildItem -LiteralPath $contentRoot -Directory -Filter 'modulo-*' | Sort-Object Name)) {
     $activity = Get-ModuleActivity $moduleDirectory
-    if (-not $activity) { continue }
 
     $moduleNumber = [regex]::Match($moduleDirectory.Name, '\d+').Value
     $outputName = "$($moduleDirectory.Name)-atividade.html"
     $sourceHtml = [System.IO.File]::ReadAllText($activity.FullName, [System.Text.Encoding]::UTF8)
     $heading = Get-HtmlTitle $sourceHtml
     if (-not $heading) { $heading = "Atividade do Módulo $moduleNumber" }
-    $kind = if ($activity.Name -like 'atividade-integrada*') { 'atividade integrada' } else { 'atividade assincrona' }
-    $label = "Modulo $moduleNumber - $kind"
+    $label = "Módulo $moduleNumber - atividade integrada"
 
     Write-Utf8File (Join-Path $publicationRoot $outputName) (Convert-ModuleActivity $activity $moduleNumber)
     $moduleEntries += [pscustomobject]@{ File = $outputName; Label = $label; Heading = $heading }
@@ -103,8 +97,6 @@ foreach ($moduleDirectory in (Get-ChildItem -LiteralPath $contentRoot -Directory
         if (-not (Test-Path -LiteralPath $sourceXml)) { throw "XML obrigatório ausente: $sourceXml" }
         $targetName = "$($moduleDirectory.Name)-$xmlName"
         Copy-Item -LiteralPath $sourceXml -Destination (Join-Path $publicationRoot $targetName) -Force
-        $kindXml = if ($xmlName -like 'lista-*') { 'lista discursiva Moodle XML' } else { 'questionário Moodle XML' }
-        $resourceEntries += [pscustomobject]@{ File = $targetName; Label = "Módulo $moduleNumber - $kindXml" }
     }
 
     foreach ($videoKind in @('roteiro-video', 'video')) {
@@ -113,7 +105,6 @@ foreach ($moduleDirectory in (Get-ChildItem -LiteralPath $contentRoot -Directory
         $videoTitle = if ($videoKind -eq 'roteiro-video') { "Módulo $moduleNumber - roteiro de vídeo" } else { "Módulo $moduleNumber - instrução de vídeo" }
         $targetName = "$($moduleDirectory.Name)-$videoKind.html"
         Write-Utf8File (Join-Path $publicationRoot $targetName) (Convert-MarkdownResource (Get-Item -LiteralPath $sourceVideo) $videoTitle)
-        $resourceEntries += [pscustomobject]@{ File = $targetName; Label = $videoTitle }
     }
 }
 
@@ -135,10 +126,9 @@ Write-Utf8File (Join-Path $publicationRoot 'referencia-rapida-c.html') @"
 "@
 
 $links = @(
-    foreach ($entry in @($moduleEntries) + @($resourceEntries)) {
+    foreach ($entry in $moduleEntries) {
         "        <li><a href=`"$($entry.File)`">$([System.Net.WebUtility]::HtmlEncode($entry.Label))</a></li>"
     }
-    '        <li><a href="referencia-rapida-c.html">Painel de referencia rapida de C</a></li>'
 ) -join "`n"
 
 $index = @"
@@ -147,9 +137,9 @@ $index = @"
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Atividades e materiais de apoio do curso Logica de Programacao Basica e Construcao de Algoritmos.">
+  <meta name="description" content="Atividades integradas do curso Logica de Programacao Basica e Construcao de Algoritmos.">
   <meta name="robots" content="index,follow">
-  <title>Materiais do curso - Logica de Programacao</title>
+  <title>Atividades integradas - Logica de Programacao</title>
   <style>
     :root { color-scheme: light; font-family: system-ui, -apple-system, "Segoe UI", sans-serif; color: #172033; background: #f1f5f9; }
     body { margin: 0; }
@@ -169,16 +159,15 @@ $index = @"
 <body>
   <main>
     <header>
-      <h1>Materiais do curso</h1>
-      <p>Logica de Programacao Basica e Construcao de Algoritmos - atividades e consulta rapida para acompanhar os modulos enquanto o ambiente Moodle estiver indisponivel.</p>
+      <h1>Atividades integradas</h1>
+      <p>Lógica de Programação Básica e Construção de Algoritmos</p>
     </header>
-    <section aria-labelledby="materiais">
-      <h2 id="materiais">Atividades e apoio</h2>
+    <section aria-labelledby="modulos">
+      <h2 id="modulos">Módulos</h2>
       <ul>
 $links
       </ul>
     </section>
-    <p class="note">O pacote inclui atividades com gabaritos, materiais de vídeo e bancos Moodle XML para download.</p>
   </main>
 </body>
 </html>
