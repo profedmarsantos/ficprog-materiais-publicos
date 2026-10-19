@@ -33,8 +33,8 @@ VAR
     inteiro total, capacidade, caixas, sobra
 INÍCIO
     leia(total, capacidade)
-    caixas <- total / capacidade
-    sobra <- total % capacidade
+    caixas = total / capacidade
+    sobra = total % capacidade
     escreva(caixas, sobra)
 FIM
 ```

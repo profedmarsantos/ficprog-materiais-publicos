@@ -5,8 +5,8 @@
     inteiro total, capacidade, caixas, sobra
 INÍCIO
     leia(total, capacidade)
-    caixas &lt;- total / capacidade
-    sobra &lt;- total % capacidade
+    caixas = total / capacidade
+    sobra = total % capacidade
     escreva(caixas, sobra)
 FIM</code></pre><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
 
@@ -22,7 +22,7 @@ int main(void) {
     real a, b, c, media
 INÍCIO
     leia(a, b, c)
-    media &lt;- (a + b + c) / 3
+    media = (a + b + c) / 3
     escreva(media)
 FIM</code></pre><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
 
@@ -38,7 +38,7 @@ int main(void) {
     real valorHora, total
 INÍCIO
     leia(normais, extras, valorHora)
-    total &lt;- normais * valorHora + extras * valorHora * 1,5
+    total = normais * valorHora + extras * valorHora * 1,5
     escreva(total)
 FIM</code></pre><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
 
@@ -54,9 +54,9 @@ int main(void) {
     inteiro total, horas, minutos, segundos
 INÍCIO
     leia(total)
-    horas &lt;- total / 3600
-    minutos &lt;- (total % 3600) / 60
-    segundos &lt;- total % 60
+    horas = total / 3600
+    minutos = (total % 3600) / 60
+    segundos = total % 60
     escreva(horas, minutos, segundos)
 FIM</code></pre><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
 
@@ -74,9 +74,9 @@ int main(void) {
     real preco, percentual, subtotal, desconto, total
 INÍCIO
     leia(quantidade, preco, percentual)
-    subtotal &lt;- quantidade * preco
-    desconto &lt;- subtotal * percentual / 100
-    total &lt;- subtotal - desconto
+    subtotal = quantidade * preco
+    desconto = subtotal * percentual / 100
+    total = subtotal - desconto
     escreva(subtotal, desconto, total)
 FIM</code></pre><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
 

@@ -66,13 +66,13 @@ Algoritmo CustoComponentes
 
     Leia quantidade
     Leia precoUnitario
-    custoTotal ← quantidade * precoUnitario
+    custoTotal = quantidade * precoUnitario
     Escreva custoTotal
 FimAlgoritmo
 ```
 
 **Visual sugerido**  
-Revelar uma linha por vez. Destacar `Leia` como entrada, a atribuição de `custoTotal` como processamento e `Escreva` como saída. Manter a seta de atribuição claramente diferente do sinal de igualdade usado em uma comparação, que não faz parte deste exemplo.
+Revelar uma linha por vez. Destacar `Leia` como entrada, a atribuição de `custoTotal` como processamento e `Escreva` como saída. Explicar que, no pseudocódigo deste curso, `=` representa a atribuição do resultado da expressão à variável. Este exemplo não usa comparações.
 
 ### 5. Variáveis e operações
 
