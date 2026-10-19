@@ -36,17 +36,8 @@ function Convert-ModuleActivity {
     param([System.IO.FileInfo]$SourceFile, [string]$ModuleNumber)
 
     $html = [System.IO.File]::ReadAllText($SourceFile.FullName, [System.Text.Encoding]::UTF8)
-    if ($SourceFile.Name -like 'atividade-integrada*') {
-        # O gabarito é material docente e não deve ser incluído na página pública.
-        $key = [regex]::Match($html, '<h2\b[^>]*>\s*Gabarito\s*</h2>', 'IgnoreCase,Singleline')
-        if ($key.Success) {
-            $blockStart = $html.LastIndexOf('<div', $key.Index, [System.StringComparison]::OrdinalIgnoreCase)
-            $sectionEnd = $html.IndexOf('</section>', $key.Index, [System.StringComparison]::OrdinalIgnoreCase)
-            if ($blockStart -lt 0 -or $sectionEnd -lt 0) {
-                throw "Não foi possível separar o gabarito docente em $($SourceFile.FullName)."
-            }
-            $html = $html.Substring(0, $blockStart) + '</section>' + $html.Substring($sectionEnd + '</section>'.Length)
-        }
+    if ([regex]::IsMatch($html, '<h2\b[^>]*>\s*Gabarito\s*</h2>', 'IgnoreCase,Singleline')) {
+        throw "A atividade-fonte ainda contém um gabarito docente: $($SourceFile.FullName)"
     }
 
     $html = $html.Replace('../dicas/painel-referencia-rapida-c.html', 'referencia-rapida-c.html')
@@ -154,4 +145,6 @@ $links
 </html>
 "@
 Write-Utf8File (Join-Path $publicationRoot 'index.html') $index
+Write-Utf8File (Join-Path $publicationRoot '.nojekyll') ''
+Write-Utf8File (Join-Path $publicationRoot 'robots.txt') "User-agent: *`nAllow: /`n"
 Write-Host "Publicação gerada a partir de $($moduleEntries.Count) atividade(s)-fonte em conteudo/."

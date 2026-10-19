@@ -1,11 +1,26 @@
-# Este repositório é usado para publicar somente o site estático.
-# Ignore tudo por padrão e permita apenas o pacote público e o fluxo do Pages.
+# O repositório GitHub e publico. Inclua somente fontes estudantis aprovadas,
+# o gerador e o workflow. Outros arquivos do curso permanecem locais.
 /*
-!/publicacao/
-!/publicacao/**
+!/conteudo/
+/conteudo/*
+!/conteudo/modulo-01/
+/conteudo/modulo-01/*
+/conteudo/modulo-01/gabarito-docente.html
+/conteudo/modulo-01/questionario-*.xml
+!/conteudo/modulo-01/atividade-integrada-19-10.html
+!/conteudo/modulo-02/
+/conteudo/modulo-02/*
+/conteudo/modulo-02/questionario-*.xml
+!/conteudo/modulo-02/atividade-assincrona.html
+!/conteudo/dicas/
+/conteudo/dicas/*
+!/conteudo/dicas/painel-referencia-rapida-c.html
 !/.github/
+/.github/*
 !/.github/workflows/
+/.github/workflows/*
 !/.github/workflows/deploy-pages.yml
 !/.github/scripts/
+/.github/scripts/*
 !/.github/scripts/Build-Publication.ps1
 !/.gitignore
