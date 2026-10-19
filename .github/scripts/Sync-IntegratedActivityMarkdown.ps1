@@ -33,7 +33,8 @@ function Convert-IntegratedActivity {
         & $pandoc.Source $tempHtml '--from=html' '--to=gfm' '--wrap=none' "--output=$tempMarkdown"
         if ($LASTEXITCODE -ne 0) { throw "Pandoc falhou ao converter $($file.FullName)." }
 
-        $markdown = [System.IO.File]::ReadAllText($tempMarkdown, [System.Text.Encoding]::UTF8)
+        $markdown = "<!-- Gerado automaticamente a partir do HTML; edite o HTML fonte. -->`n`n" +
+            [System.IO.File]::ReadAllText($tempMarkdown, [System.Text.Encoding]::UTF8)
         if (-not (Test-Path -LiteralPath $markdownPath) -or
             [System.IO.File]::ReadAllText($markdownPath, [System.Text.Encoding]::UTF8) -cne $markdown) {
             [System.IO.File]::WriteAllText($markdownPath, $markdown, $encoding)

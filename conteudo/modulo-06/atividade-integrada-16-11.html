@@ -1,7 +1,61 @@
-<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Atividade integrada — Módulo 6</title><style>body{font:16px/1.55 Arial,sans-serif;background:#f5f8fc;color:#172033;margin:0}main{max-width:980px;margin:24px auto;padding:28px;background:#fff;border:1px solid #dbe4ee;border-radius:16px}header{background:linear-gradient(135deg,#0f172a,#075985);color:#fff;padding:26px;border-radius:12px}header p{margin:4px 0}h1{margin:6px 0}h2{color:#0c4a6e;margin-top:32px}h3{color:#173b55}a{color:#075985}.note{padding:14px;border-left:4px solid #d97706;background:#fffbeb;border-radius:6px}.exercise{border:1px solid #dbe4ee;border-radius:10px;padding:16px;margin:16px 0}table{width:100%;border-collapse:collapse;margin:10px 0}th,td{padding:9px;border:1px solid #dbe4ee;text-align:left;vertical-align:top}th{background:#edf5fb}.test{background:#f0fdf4;padding:10px;border-radius:6px}details{border:1px solid #bfdbfe;border-radius:8px;margin:12px 0}summary{background:#eff6ff;padding:12px;cursor:pointer;font-weight:700;color:#0c4a6e}.answer{padding:0 15px 15px}pre{white-space:pre;overflow:auto;padding:14px;background:#0f172a;color:#e2e8f0;border-radius:8px}code{font-family:Consolas,monospace}footer{font-size:13px;color:#475569;margin-top:30px}@media(max-width:700px){main{margin:0;padding:16px;border:0}table{display:block;overflow-x:auto}}</style></head><body><main><header><p>IFSP-SJP · Lógica de Programação Básica e Construção de Algoritmos</p><h1>Atividade integrada — Módulo 6</h1><p>Vetores, indexação e iteração · 16/11/2026</p></header><section><h2>Encontro presencial</h2><p>Este módulo ocupa o encontro presencial de 2 horas. O professor selecionará os exercícios para trabalho em aula e poderá retomar os demais depois.</p><p>Para cada exercício presencial: identifique entrada, processamento e saída; implemente em C; execute o caso de teste; depure por teste de mesa. Um esquema ou pseudocódigo pode ajudar, mas não é entrega obrigatória.</p><p class="note"><strong>Organização:</strong> são quatro exercícios e um desafio opcional. A lista é um repertório para seleção do professor, não uma exigência de resolver todos durante as 2 horas do encontro.</p><article class="exercise" id="ex1"><h3>Exercício 1 — Média de cinco temperaturas</h3><p>Leia cinco temperaturas reais em um vetor. Mostre a média aritmética com duas casas. Use dois percursos: leitura e soma.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>5 valores float</td><td>ler temp[0..4], somar, dividir por 5</td><td>média</td></tr></table><p class="test"><strong>Caso de teste:</strong> 20, 22, 24, 26, 28 → <strong>resultado esperado:</strong> Media: 24.00</p></article>
-<article class="exercise" id="ex2"><h3>Exercício 2 — Menor leitura</h3><p>Leia seis medições inteiras e mostre a menor. Inicialize o mínimo com o elemento da posição 0 após a leitura.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>6 inteiros</td><td>comparar cada elemento 1..5 com minimo</td><td>menor valor</td></tr></table><p class="test"><strong>Caso de teste:</strong> 9, 4, 7, 2, 8, 5 → <strong>resultado esperado:</strong> Menor: 2</p></article>
-<article class="exercise" id="ex3"><h3>Exercício 3 — Exibir ordem inversa</h3><p>Leia cinco códigos inteiros em um vetor. Exiba-os da última para a primeira posição, separados por espaço.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>5 inteiros</td><td>ler índices 0..4; exibir de 4 até 0</td><td>códigos invertidos</td></tr></table><p class="test"><strong>Caso de teste:</strong> 11, 22, 33, 44, 55 → <strong>resultado esperado:</strong> 55 44 33 22 11</p></article>
-<article class="exercise" id="ex4"><h3>Exercício 4 — Contagem no limite ou acima</h3><p>Leia cinco notas reais e depois um limite real. Conte quantas notas são maiores ou iguais ao limite.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>5 notas e limite</td><td>percorrer vetor e incrementar se nota[i] &gt;= limite</td><td>quantidade</td></tr></table><p class="test"><strong>Caso de teste:</strong> 5.0, 7.0, 6.0, 8.0, 4.0; limite 6.0 → <strong>resultado esperado:</strong> Quantidade: 3</p></article><article class="exercise"><h3>Desafio opcional — Primeira ocorrência</h3><p>Leia cinco códigos inteiros e um código procurado. Mostre o primeiro índice onde ele aparece ou -1 se não existir. Preserve a primeira ocorrência mesmo se houver repetições.</p><p class="test"><strong>Caso de teste:</strong> vetor 4, 7, 4, 9, 4; procura 4 → <strong>resultado esperado:</strong> Indice: 0</p></article><h3>Entrega e conferência</h3><p>Para os exercícios selecionados, mostre a análise do problema, o programa C, a saída obtida e um teste de mesa que explique o valor das variáveis. A escrita formal de pseudocódigo não é exigida.</p></section><section><h2>Gabarito docente</h2><p>Abra cada solução depois da tentativa dos estudantes. Os programas usam apenas os recursos introdutórios estudados até este módulo.</p><details><summary>Exercício 1 — Média de cinco temperaturas</summary><div class="answer"><p><strong>Resposta esperada:</strong> A soma é 120 e a média é 24.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Atividade integrada — Módulo 6</title>
+  <style>
+    :root{font-family:Arial,sans-serif;color:#172033;background:#f5f8fc}
+    *{box-sizing:border-box}
+    body{margin:0;line-height:1.55}
+    main{max-width:1024px;margin:24px auto;padding:0 24px 28px}
+    .page-title{max-width:960px;margin:0 auto 24px;font-size:2rem}
+    .module-section{margin:0 0 28px;padding:32px;background:#fff;border:1px solid #dbe4ee;border-radius:16px}
+    .banner{margin-bottom:24px;padding:24px;color:#fff;background:linear-gradient(135deg,#0f172a,#075985);border-radius:12px}
+    .async .banner{background:linear-gradient(135deg,#4c1d95,#7c3aed)}
+    .badge{display:inline-block;padding:3px 9px;border-radius:99px;background:rgba(255,255,255,.14);font-size:13px;font-weight:700;text-transform:uppercase}
+    .banner h2{margin:8px 0;font-size:30px;color:#fff}
+    .banner p{margin:0;color:#f3e8ff;font-size:14px}
+    h3{margin:30px 0 12px;color:#0c4a6e;font-size:21px}
+    .async h3{color:#581c87}
+    h4{margin:0 0 10px;font-size:19px}
+    p,li{max-width:90ch}
+    ol,ul{padding-left:22px}
+    li+li{margin-top:6px}
+    .exercise{margin:20px 0;padding:18px;border:1px solid #dbe4ee;border-radius:10px;background:#fff}
+    .note{padding:14px 16px;border-left:4px solid #d97706;border-radius:6px;background:#fffbeb}
+    .credit{padding:14px 16px;border-left:4px solid #6d28d9;border-radius:6px;background:#ede9fe;color:#4c1d95}
+    table{width:100%;margin:12px 0;border-collapse:collapse}
+    th,td{padding:10px;border:1px solid #dbe4ee;text-align:left;vertical-align:top}
+    th{background:#f1f5f9}
+    .test{padding:10px 12px;border-radius:6px;background:#f0fdf4;color:#14532d}
+    details{margin:12px 0;border:1px solid #bfdbfe;border-radius:8px}
+    summary{padding:12px;background:#eff6ff;color:#0c4a6e;font-weight:700;cursor:pointer}
+    .answer{padding:0 16px 16px}
+    .answer h4{margin-top:18px}
+    pre{overflow:auto;padding:14px;border-radius:8px;background:#0f172a;color:#e2e8f0;white-space:pre}
+    code{font-family:Consolas,monospace}
+    p code,td code,li code{padding:1px 4px;border-radius:3px;background:#eef2f7}
+    a{color:#075985}
+    .step{margin:22px 0}
+    footer{max-width:960px;margin:0 auto;color:#536076;font-size:14px}
+    @media(max-width:700px){main{margin:0;padding:16px}.module-section{padding:18px}.banner{padding:20px}.banner h2{font-size:24px}table{display:block;overflow-x:auto}}
+</style>
+</head>
+<body>
+  <main>
+    <h1 class="page-title">Atividade integrada — Módulo 6</h1>
+    <section class="module-section in-person" aria-labelledby="presencial-06">
+      <div class="banner"><span class="badge">Atividade Presencial</span><h2 id="presencial-06">Atividade Presencial — Módulo 6</h2><p>2 h · Vetores, indexação e iteração · 16/11/2026</p></div>
+      <p><strong>Objetivo.</strong> Percorrer vetores, acessar índices válidos e obter resultados a partir dos elementos.</p>
+    <p>Este módulo ocupa o encontro presencial de 2 horas. O professor selecionará os exercícios para trabalho em aula e poderá retomar os demais depois.</p>
+    <h3>Como resolver cada exercício</h3>
+    <ol><li>Complete o quadro <strong>Entrada → Processamento → Saída</strong>.</li><li>Esboce a lógica se isso ajudar; a escrita formal de pseudocódigo não é obrigatória.</li><li>Implemente a solução em C com os recursos estudados até este módulo.</li><li>Execute o programa com o caso de teste indicado e registre a saída.</li><li>Faça o teste de mesa e compare a saída obtida com o resultado esperado.</li></ol>
+    <p class="note"><strong>Organização:</strong> são quatro exercícios e um desafio opcional. A lista é um repertório para seleção do professor, não uma exigência de resolver todos durante as 2 horas do encontro.</p><article class="exercise" id="ex1"><h4>Exercício 1 — Média de cinco temperaturas</h4><p>Leia cinco temperaturas reais em um vetor. Mostre a média aritmética com duas casas. Use dois percursos: leitura e soma.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>5 valores float</td><td>ler temp[0..4], somar, dividir por 5</td><td>média</td></tr></table><p class="test"><strong>Caso de teste:</strong> 20, 22, 24, 26, 28 → <strong>resultado esperado:</strong> Media: 24.00</p></article>
+<article class="exercise" id="ex2"><h4>Exercício 2 — Menor leitura</h4><p>Leia seis medições inteiras e mostre a menor. Inicialize o mínimo com o elemento da posição 0 após a leitura.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>6 inteiros</td><td>comparar cada elemento 1..5 com minimo</td><td>menor valor</td></tr></table><p class="test"><strong>Caso de teste:</strong> 9, 4, 7, 2, 8, 5 → <strong>resultado esperado:</strong> Menor: 2</p></article>
+<article class="exercise" id="ex3"><h4>Exercício 3 — Exibir ordem inversa</h4><p>Leia cinco códigos inteiros em um vetor. Exiba-os da última para a primeira posição, separados por espaço.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>5 inteiros</td><td>ler índices 0..4; exibir de 4 até 0</td><td>códigos invertidos</td></tr></table><p class="test"><strong>Caso de teste:</strong> 11, 22, 33, 44, 55 → <strong>resultado esperado:</strong> 55 44 33 22 11</p></article>
+<article class="exercise" id="ex4"><h4>Exercício 4 — Contagem no limite ou acima</h4><p>Leia cinco notas reais e depois um limite real. Conte quantas notas são maiores ou iguais ao limite.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>5 notas e limite</td><td>percorrer vetor e incrementar se nota[i] &gt;= limite</td><td>quantidade</td></tr></table><p class="test"><strong>Caso de teste:</strong> 5.0, 7.0, 6.0, 8.0, 4.0; limite 6.0 → <strong>resultado esperado:</strong> Quantidade: 3</p></article><article class="exercise"><h4>Desafio opcional — Primeira ocorrência</h4><p>Leia cinco códigos inteiros e um código procurado. Mostre o primeiro índice onde ele aparece ou -1 se não existir. Preserve a primeira ocorrência mesmo se houver repetições.</p><p class="test"><strong>Caso de teste:</strong> vetor 4, 7, 4, 9, 4; procura 4 → <strong>resultado esperado:</strong> Indice: 0</p></article><h3>Entrega e conferência</h3><p>Para os exercícios selecionados, mostre a análise do problema, o programa C, a saída obtida e um teste de mesa que explique o valor das variáveis. A escrita formal de pseudocódigo não é exigida.</p>
+      <h3>Gabarito</h3><p>Abra cada solução depois da tentativa dos estudantes. Os programas usam apenas os recursos introdutórios estudados até este módulo.</p><details><summary>Exercício 1 — Média de cinco temperaturas</summary><div class="answer"><p><strong>Resposta esperada:</strong> A soma é 120 e a média é 24.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
 
 int main(void) {
     float temp[5], soma = 0.0f;
@@ -14,7 +68,7 @@ int main(void) {
     }
     printf(&quot;Media: %.2f\n&quot;, soma / 5.0f);
     return 0;
-}</code></pre><h4>Teste de mesa e depuração</h4><p>Índices 0..4 recebem 20,22,24,26,28; soma evolui 20,42,66,92,120; 120/5=24. O índice 5 não existe nesse vetor.</p></div></details>
+}</code></pre><h4>Teste de mesa e depuração</h4><table class="trace"><thead><tr><th scope="col">Passo</th><th scope="col">i</th><th scope="col">temp[i]</th><th scope="col">soma</th><th scope="col">Saída</th></tr></thead><tbody><tr><td>Leitura concluída</td><td>0–4</td><td>[20, 22, 24, 26, 28]</td><td>0</td><td>—</td></tr><tr><td>1ª soma</td><td>0</td><td>20</td><td>20</td><td>—</td></tr><tr><td>2ª soma</td><td>1</td><td>22</td><td>42</td><td>—</td></tr><tr><td>3ª soma</td><td>2</td><td>24</td><td>66</td><td>—</td></tr><tr><td>4ª soma</td><td>3</td><td>26</td><td>92</td><td>—</td></tr><tr><td>5ª soma</td><td>4</td><td>28</td><td>120</td><td>—</td></tr><tr><td>Exibição</td><td>—</td><td>—</td><td>120 / 5 = 24</td><td>Media: 24.00</td></tr></tbody></table><p class="trace-note">Índices 0..4 recebem 20,22,24,26,28; soma evolui 20,42,66,92,120; 120/5=24. O índice 5 não existe nesse vetor.</p></div></details>
 <details><summary>Exercício 2 — Menor leitura</summary><div class="answer"><p><strong>Resposta esperada:</strong> O valor 2, na posição 3, é o menor.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
 
 int main(void) {
@@ -30,7 +84,7 @@ int main(void) {
     }
     printf(&quot;Menor: %d\n&quot;, minimo);
     return 0;
-}</code></pre><h4>Teste de mesa e depuração</h4><p>Mínimo inicia em 9; ao examinar 4 torna-se 4; 7 não altera; 2 torna-se 2; 8 e 5 não alteram. Inicializar mínimo em 0 erraria para vetores só positivos.</p></div></details>
+}</code></pre><h4>Teste de mesa e depuração</h4><table class="trace"><thead><tr><th scope="col">Passo</th><th scope="col">i</th><th scope="col">medicao[i]</th><th scope="col">minimo</th><th scope="col">Saída</th></tr></thead><tbody><tr><td>Leitura concluída</td><td>0–5</td><td>[9, 4, 7, 2, 8, 5]</td><td>—</td><td>—</td></tr><tr><td>Inicialização</td><td>0</td><td>9</td><td>9</td><td>—</td></tr><tr><td>Comparação</td><td>1</td><td>4</td><td>4</td><td>—</td></tr><tr><td>Comparação</td><td>2</td><td>7</td><td>4</td><td>—</td></tr><tr><td>Comparação</td><td>3</td><td>2</td><td>2</td><td>—</td></tr><tr><td>Comparação</td><td>4</td><td>8</td><td>2</td><td>—</td></tr><tr><td>Comparação</td><td>5</td><td>5</td><td>2</td><td>—</td></tr><tr><td>Exibição</td><td>—</td><td>—</td><td>2</td><td>Menor: 2</td></tr></tbody></table><p class="trace-note">Mínimo inicia em 9; ao examinar 4 torna-se 4; 7 não altera; 2 torna-se 2; 8 e 5 não alteram. Inicializar mínimo em 0 erraria para vetores só positivos.</p></div></details>
 <details><summary>Exercício 3 — Exibir ordem inversa</summary><div class="answer"><p><strong>Resposta esperada:</strong> A saída percorre índices 4, 3, 2, 1, 0.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
 
 int main(void) {
@@ -46,7 +100,7 @@ int main(void) {
     }
     printf(&quot;\n&quot;);
     return 0;
-}</code></pre><h4>Teste de mesa e depuração</h4><p>Após a leitura, codigo[0]=11 e codigo[4]=55. A segunda repetição visita 4→0 e imprime 55,44,33,22,11. A condição i&gt;=0 inclui a primeira posição.</p></div></details>
+}</code></pre><h4>Teste de mesa e depuração</h4><table class="trace"><thead><tr><th scope="col">Passo</th><th scope="col">i</th><th scope="col">codigo[i]</th><th scope="col">Saída acumulada</th></tr></thead><tbody><tr><td>Leitura concluída</td><td>0–4</td><td>[11, 22, 33, 44, 55]</td><td>—</td></tr><tr><td>Exibição</td><td>4</td><td>55</td><td>55</td></tr><tr><td>Exibição</td><td>3</td><td>44</td><td>55 44</td></tr><tr><td>Exibição</td><td>2</td><td>33</td><td>55 44 33</td></tr><tr><td>Exibição</td><td>1</td><td>22</td><td>55 44 33 22</td></tr><tr><td>Exibição</td><td>0</td><td>11</td><td>55 44 33 22 11</td></tr></tbody></table><p class="trace-note">Após a leitura, codigo[0]=11 e codigo[4]=55. A segunda repetição visita 4→0 e imprime 55,44,33,22,11. A condição i&gt;=0 inclui a primeira posição.</p></div></details>
 <details><summary>Exercício 4 — Contagem no limite ou acima</summary><div class="answer"><p><strong>Resposta esperada:</strong> Notas 7, 6 e 8 atingem o limite.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
 
 int main(void) {
@@ -63,7 +117,7 @@ int main(void) {
     }
     printf(&quot;Quantidade: %d\n&quot;, quantidade);
     return 0;
-}</code></pre><h4>Teste de mesa e depuração</h4><p>Com limite=6, índices 0 e 4 não contam; 1,2,3 contam. Quantidade evolui 0,1,2,3,3. O operador &gt;= inclui a nota exatamente igual a 6.</p></div></details>
+}</code></pre><h4>Teste de mesa e depuração</h4><table class="trace"><thead><tr><th scope="col">Passo</th><th scope="col">i</th><th scope="col">nota[i]</th><th scope="col">nota[i] ≥ 6?</th><th scope="col">quantidade</th><th scope="col">Saída</th></tr></thead><tbody><tr><td>Leitura e limite</td><td>—</td><td>[5, 7, 6, 8, 4]; limite = 6</td><td>—</td><td>0</td><td>—</td></tr><tr><td>Comparação</td><td>0</td><td>5</td><td>Não</td><td>0</td><td>—</td></tr><tr><td>Comparação</td><td>1</td><td>7</td><td>Sim</td><td>1</td><td>—</td></tr><tr><td>Comparação</td><td>2</td><td>6</td><td>Sim</td><td>2</td><td>—</td></tr><tr><td>Comparação</td><td>3</td><td>8</td><td>Sim</td><td>3</td><td>—</td></tr><tr><td>Comparação</td><td>4</td><td>4</td><td>Não</td><td>3</td><td>—</td></tr><tr><td>Exibição</td><td>—</td><td>—</td><td>—</td><td>3</td><td>Quantidade: 3</td></tr></tbody></table><p class="trace-note">Com limite=6, índices 0 e 4 não contam; 1,2,3 contam. Quantidade evolui 0,1,2,3,3. O operador &gt;= inclui a nota exatamente igual a 6.</p></div></details>
 <details><summary>Desafio opcional — Primeira ocorrência</summary><div class="answer"><p><strong>Resposta esperada:</strong> O primeiro 4 está no índice 0.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
 
 int main(void) {
@@ -79,4 +133,18 @@ int main(void) {
     }
     printf(&quot;Indice: %d\n&quot;, indice);
     return 0;
-}</code></pre><h4>Teste de mesa e depuração</h4><p>No índice 0, encontra 4 e grava 0. Nos índices 2 e 4, a condição indice==-1 já é falsa, portanto o valor 0 permanece. Se nada coincidir, imprime -1.</p></div></details></section><section><h2>Atividade EAD — 4h30</h2><p>Estudo individual orientado após o encontro. Faça as etapas na ordem e consulte o <a href="../dicas/painel-referencia-rapida-c.html">painel de referência rápida de C</a> somente para comandos já abordados.</p><table><tr><th scope="col">Etapa</th><th scope="col">Tempo planejado</th><th scope="col">Ação</th></tr><tr><td>Estudo e prática</td><td>3h45</td><td>Revise índices de 0 a tamanho menos 1, leitura sequencial de vetores, percursos e acumulação; refaça as saídas à mão antes de compilar.</td></tr><tr><td>Questionário objetivo do Módulo 6</td><td>45 min</td><td>Responda no Moodle, envie a tentativa e leia os feedbacks para revisar os erros.</td></tr></table><p>Desenhe as posições do vetor e associe cada entrada a seu índice. Execute também casos com todos os elementos iguais e com o maior ou menor na última posição.</p><p class="note"><strong>Registro da carga EAD:</strong> quando o questionário for o único registro no Moodle, sua conclusão representa a carga planejada do bloco EAD deste módulo (4h30), que inclui o estudo orientado. Esse registro não mede o tempo real que cada estudante dedicou às etapas.</p></section><footer>Material autocontido para leitura, prática e conferência docente. Data do encontro: 16/11/2026.</footer></main></body></html>
+}</code></pre><h4>Teste de mesa e depuração</h4><table class="trace"><thead><tr><th scope="col">Passo</th><th scope="col">i</th><th scope="col">codigo[i]</th><th scope="col">indice</th><th scope="col">Saída</th></tr></thead><tbody><tr><td>Leitura e busca</td><td>—</td><td>[4, 7, 4, 9, 4]; procurado = 4</td><td>-1</td><td>—</td></tr><tr><td>Primeira coincidência</td><td>0</td><td>4</td><td>0</td><td>—</td></tr><tr><td>Sem coincidência</td><td>1</td><td>7</td><td>0</td><td>—</td></tr><tr><td>Coincidência posterior</td><td>2</td><td>4</td><td>0</td><td>—</td></tr><tr><td>Sem coincidência</td><td>3</td><td>9</td><td>0</td><td>—</td></tr><tr><td>Coincidência posterior</td><td>4</td><td>4</td><td>0</td><td>—</td></tr><tr><td>Exibição</td><td>—</td><td>—</td><td>0</td><td>Indice: 0</td></tr></tbody></table><p class="trace-note">No índice 0, encontra 4 e grava 0. Nos índices 2 e 4, a condição indice==-1 já é falsa, portanto o valor 0 permanece. Se nada coincidir, imprime -1.</p></div></details><h4>Intervenções esperadas</h4><ul><li>Associe cada valor à posição do vetor e percorra somente índices válidos.</li><li>Teste elementos iguais e resultados nas primeiras e últimas posições.</li></ul>
+    </section>
+    <section class="module-section async" aria-labelledby="assinc-06">
+    <div class="banner"><span class="badge">Atividade Assíncrona</span><h2 id="assinc-06">Atividade Assíncrona — Módulo 6</h2><p>4h30 · estudo individual orientado após o encontro presencial</p></div>
+    <h3>Roteiro da atividade assíncrona</h3><p>Esta atividade consolida as aprendizagens do Módulo 6. Siga os dois blocos na ordem indicada.</p>
+    <table><thead><tr><th scope="col">Ordem</th><th scope="col">Bloco</th><th scope="col">Duração</th><th scope="col">Resultado esperado</th></tr></thead><tbody><tr><td>1</td><td>Revisão pessoal orientada</td><td>3h45</td><td>Revise índices de 0 a tamanho menos 1, leitura sequencial de vetores, percursos e acumulação; refaça as saídas à mão antes de compilar.</td></tr><tr><td>2</td><td>Questionário Moodle</td><td>45 min</td><td>Enviar uma tentativa e consultar os feedbacks.</td></tr><tr><th scope="row" colspan="2">Total da atividade assíncrona</th><td>4h30</td><td>—</td></tr></tbody></table>
+    <div class="step"><h4>1. Revisão pessoal orientada — Módulo 6 · 3h45</h4><ol><li>Revise índices de 0 a tamanho menos 1, leitura sequencial de vetores, percursos e acumulação; refaça as saídas à mão antes de compilar.</li><li>Desenhe as posições do vetor e associe cada entrada a seu índice. Execute também casos com todos os elementos iguais e com o maior ou menor na última posição.</li><li>Execute os exemplos em C e registre um teste de mesa antes de conferir a saída.</li><li>Consulte o <a href="../dicas/painel-referencia-rapida-c.html">painel de referência rápida de C</a> e anote dúvidas para o próximo encontro.</li></ol></div>
+    <div class="step"><h4>2. Questionário Moodle · 45 min</h4><p>Responda no Moodle, envie a tentativa e leia os feedbacks para revisar os erros.</p></div>
+    <p class="credit"><strong>Registro da carga EAD:</strong> quando o questionário for o único registro no Moodle, sua conclusão representa a carga planejada do bloco EAD deste módulo (4h30), que inclui o estudo orientado. Esse registro não mede o tempo real que cada estudante dedicou às etapas.</p>
+
+  </section>
+    <footer>Use os feedbacks do questionário para orientar a retomada dos conteúdos. Encontro de 16/11/2026.</footer>
+  </main>
+</body>
+</html>
