@@ -22,6 +22,22 @@ for ($number = 1; $number -le 8; $number++) {
     if ($ValidateInternal -and -not (Test-Path -LiteralPath ([System.IO.Path]::ChangeExtension($activities[0].FullName, '.md')) -PathType Leaf)) { throw "Módulo $id sem espelho Markdown da atividade integrada." }
     $html = [System.IO.File]::ReadAllText($activities[0].FullName, [System.Text.Encoding]::UTF8)
     if ($html -notmatch '(?is)<!doctype\s+html>.*<html\b.*</html>') { throw "Módulo $id sem página HTML completa." }
+    # O Módulo 1 é também a referência visual: estrutura de 960 px, cartões,
+    # faixas presencial/EAD, quadros e gabaritos com os mesmos estilos inline.
+    # Esta checagem impede que um novo módulo volte ao layout CSS alternativo.
+    if ($html -match '(?is)<style\b|class="(?:module-section|banner|exercise|answer|step|credit)\b') {
+        throw "Módulo $id usa um layout diferente da atividade integrada do Módulo 1."
+    }
+    foreach ($visualMarker in @(
+        'max-width:960px; margin:32px auto; padding:32px;',
+        'background:linear-gradient(135deg,#0f172a,#075985)',
+        'background:linear-gradient(135deg,#3b0764,#7e22ce)',
+        'background:#f0fdf4; border-radius:6px; color:#14532d',
+        'background:#eff6ff;',
+        'background:#ede9fe;'
+    )) {
+        if (-not $html.Contains($visualMarker)) { throw "Módulo $id sem elemento visual do modelo: $visualMarker" }
+    }
     if ($html -notmatch "(?is)<h2\b[^>]*>\s*Atividade Presencial\s*[\u2014\u2013-]\s*M.dulo $number\s*</h2>" -or
         $html -notmatch "(?is)<h2\b[^>]*>\s*Atividade Ass.ncrona\s*[\u2014\u2013-]\s*M.dulo $number\s*</h2>") { throw "Módulo $id sem as duas seções padronizadas." }
     foreach ($marker in @('Como resolver cada exerc.cio', 'Entrega e confer.ncia', 'Roteiro da atividade ass.ncrona', 'Revis.o pessoal orientada', 'Question.rio Moodle', 'Interven..es esperadas', 'Registro da carga EAD')) {
