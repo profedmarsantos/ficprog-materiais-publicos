@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quiz>
+
+  <!-- Categoria das Questões Assíncronas do Módulo 1 -->
+  <question type="category">
+    <category>
+      <text><![CDATA[$course$/top/Módulo 1 - Introdução e E/S/Questões Assíncronas]]></text>
+    </category>
+    <info format="html">
+      <text><![CDATA[Questões assíncronas objetivas com estilização visual e feedbacks para o Módulo 1.]]></text>
+    </info>
+  </question>
+
+  <!-- Questão Assíncrona 1 -->
+  <question type="multichoice">
+    <name>
+      <text><![CDATA[M1 - Assíncrona 01 - Tipos de Dados (Automação Industrial)]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+<p><strong>Objetivo de aprendizagem:</strong> Selecionar tipos int e float para representar contagens e medidas decimais.</p>
+
+<div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; background-color: #ffffff; margin-bottom: 12px; font-family: Arial, sans-serif;">
+  <div style="margin-bottom: 10px;">
+    <span style="background-color: #198754; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85em;">Automação Industrial</span>
+    <span style="background-color: #6c757d; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85em;">Conceitual</span>
+  </div>
+  <p style="font-size: 1.05em; color: #212529; line-height: 1.5;">
+    Em linguagem C, o tipo de dado escolhido determina que tipo de informação uma variável pode armazenar na memória. Caso um técnico precise armazenar a <strong>quantidade inteira de chaves fim de curso</strong> instaladas (exemplo: <code>8</code>) e a <strong>corrente elétrica medida</strong> em um circuito (exemplo: <code>2.45</code> Amperes), quais tipos de dados devem ser declarados para a quantidade de chaves e para a corrente, respectivamente?
+  </p>
+</div>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+<div style="background-color: #e7f1ff; border-left: 4px solid #0d6efd; padding: 12px; border-radius: 4px; font-family: Arial, sans-serif;">
+  <strong>Feedback Explicativo:</strong><br>
+  O tipo <code>int</code> é apropriado para contagens inteiras e discretas (como <code>8</code> chaves). O tipo <code>float</code> é necessário para números reais com partes fracionárias (como <code>2.45</code> Amperes).
+</div>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>int</code> para a quantidade de chaves e <code>float</code> para a corrente elétrica.]]></text>
+      <feedback format="html"><text><![CDATA[Correto! Inteiros para contagem exata e float para grandezas contínuas/decimais.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>float</code> para a quantidade de chaves e <code>int</code> para a corrente elétrica.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. A corrente possui casas decimais, logo precisa ser float.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>float</code> para a quantidade de chaves e <code>float</code> para a corrente elétrica.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. A quantidade de chaves é um número inteiro discreto, devendo ser int.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>int</code> para a quantidade de chaves e <code>int</code> para a corrente elétrica.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O tipo int descartaria a parte decimal da corrente elétrica.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>char</code> para a quantidade de chaves e <code>float</code> para a corrente elétrica.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Uma contagem pode ultrapassar um único caractere; o tipo adequado é int.]]></text></feedback>
+    </answer>
+  </question>
+
+  <!-- Questão Assíncrona 2 -->
+  <question type="multichoice">
+    <name>
+      <text><![CDATA[M1 - Assíncrona 02 - Sintaxe do scanf (Informática)]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+<p><strong>Objetivo de aprendizagem:</strong> Identificar a sintaxe de leitura de variável inteira com scanf.</p>
+
+<div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; background-color: #ffffff; margin-bottom: 12px; font-family: Arial, sans-serif;">
+  <div style="margin-bottom: 10px;">
+    <span style="background-color: #0d6efd; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85em;">Informática</span>
+    <span style="background-color: #dc3545; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85em;">Análise de Erro</span>
+  </div>
+  <p style="font-size: 1.05em; color: #212529; line-height: 1.5;">
+    Um estudante do curso de Informática escreveu a seguinte instrução para ler do teclado o número do canal de rede selecionado:
+  </p>
+  <pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 12px; border-radius: 6px; font-family: 'Courier New', Courier, monospace; font-size: 0.95em;"><code>scanf("%d", canal);</code></pre>
+  <p style="font-size: 1.05em; color: #212529; line-height: 1.5;">
+    Durante a execução, o programa apresentou falha e encerrou inesperadamente. Qual erro de sintaxe foi cometido no código?
+  </p>
+</div>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+<div style="background-color: #e7f1ff; border-left: 4px solid #0d6efd; padding: 12px; border-radius: 4px; font-family: Arial, sans-serif;">
+  <strong>Feedback Explicativo:</strong><br>
+  Em C, a função <code>scanf</code> requer o operador de endereço <code>&amp;</code> antes do nome da variável (exemplo: <code>&amp;canal</code>). Sem ele, o programa tenta escrever em uma posição de memória inválida, gerando erro de execução.
+</div>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[O especificador <code>%d</code> não é aceito na função <code>scanf</code>.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O especificador %d é o correto para leitura de inteiros.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Faltou incluir o operador <code>&amp;</code> antes do nome da variável <code>canal</code>.]]></text>
+      <feedback format="html"><text><![CDATA[Exato! O scanf necessita do endereço de memória passado pelo operador &.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[O nome da variável deveria estar obrigatoriamente entre aspas duplas.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Apenas a string de formato fica entre aspas duplas.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[O comando <code>scanf</code> só consegue ler variáveis do tipo <code>float</code>.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O scanf lê int, float, char e diversos outros tipos de dados.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[O especificador <code>%d</code> deveria ser substituído por <code>%f</code>.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Como canal é int, %d está correto; o problema é a ausência de & antes da variável.]]></text></feedback>
+    </answer>
+  </question>
+
+  <!-- Questão Assíncrona 3 -->
+  <question type="multichoice">
+    <name>
+      <text><![CDATA[M1 - Assíncrona 03 - Precedência de Operadores]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+<p><strong>Objetivo de aprendizagem:</strong> Aplicar a precedência entre multiplicação e adição na previsão da saída.</p>
+
+<div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; background-color: #ffffff; margin-bottom: 12px; font-family: Arial, sans-serif;">
+  <div style="margin-bottom: 10px;">
+    <span style="background-color: #0d6efd; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85em;">Geral</span>
+    <span style="background-color: #ffc107; color: #212529; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85em;">Análise de Código</span>
+  </div>
+  <p style="font-size: 1.05em; color: #212529; line-height: 1.5;">
+    Observe o programa em C abaixo:
+  </p>
+  <pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 12px; border-radius: 6px; font-family: 'Courier New', Courier, monospace; font-size: 0.95em;"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int a = 12;
+    int b = 3;
+    int resultado;
+
+    resultado = a + b * 2;
+
+    printf("Resultado = %d\n", resultado);
+
+    return 0;
+}</code></pre>
+  <p style="font-size: 1.05em; color: #212529; line-height: 1.5;">
+    Qual valor será impresso na tela ao executar este programa?
+  </p>
+</div>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+<div style="background-color: #e7f1ff; border-left: 4px solid #0d6efd; padding: 12px; border-radius: 4px; font-family: Arial, sans-serif;">
+  <strong>Feedback Explicativo:</strong><br>
+  Na linguagem C, as operações seguem a precedência matemática padrão. A multiplicação (<code>*</code>) é feita antes da adição (<code>+</code>). Assim, executa-se primeiro <code>b * 2</code> (<code>3 * 2 = 6</code>) e em seguida <code>a + 6</code> (<code>12 + 6 = 18</code>).
+</div>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>Resultado = 30</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Isso ocorreria se a soma fosse feita primeiro: (12 + 3) * 2 = 30.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>Resultado = 18</code>]]></text>
+      <feedback format="html"><text><![CDATA[Correto! A multiplicação 3 * 2 é calculada primeiro (6), e depois somada a 12 (18).]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>Resultado = 24</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Verifique a ordem de precedência da multiplicação.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>Resultado = 15</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Revise a expressão aritmética.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>Resultado = 6</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. 6 é apenas o resultado de 3 * 2; ainda é necessário somar 12.]]></text></feedback>
+    </answer>
+  </question>
+
+  <!-- Questão Assíncrona 4 -->
+  <question type="multichoice">
+    <name>
+      <text><![CDATA[M1 - Assíncrona 04 - Formatação de float (Automação Industrial)]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+<p><strong>Objetivo de aprendizagem:</strong> Selecionar a formatação de saída com uma casa decimal para float.</p>
+
+<div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; background-color: #ffffff; margin-bottom: 12px; font-family: Arial, sans-serif;">
+  <div style="margin-bottom: 10px;">
+    <span style="background-color: #198754; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85em;">Automação Industrial</span>
+    <span style="background-color: #0dcaf0; color: #212529; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85em;">Saída Formatada</span>
+  </div>
+  <p style="font-size: 1.05em; color: #212529; line-height: 1.5;">
+    Para exibir o valor da pressão de um cilindro pneumático armazenado na variável <code>float pressao = 5.8764;</code> mostrando exatamente <strong>uma casa decimal</strong>, qual instrução de <code>printf</code> deve ser utilizada?
+  </p>
+</div>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+<div style="background-color: #e7f1ff; border-left: 4px solid #0d6efd; padding: 12px; border-radius: 4px; font-family: Arial, sans-serif;">
+  <strong>Feedback Explicativo:</strong><br>
+  A sintaxe <code>%.1f</code> indica ao <code>printf</code> que o valor da variável de ponto flutuante deve ser exibido com apenas 1 casa decimal após o ponto.
+</div>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>printf("Pressao: %1f bar\n", pressao);</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O ponto antes do número é obrigatório para definir as casas decimais (ex: %.1f).]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>printf("Pressao: %.1f bar\n", pressao);</code>]]></text>
+      <feedback format="html"><text><![CDATA[Correto! A notação %.1f limita a exibição a exatamente 1 casa decimal.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>printf("Pressao: %f.1 bar\n", pressao);</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. A especificação de precisão .1 deve vir antes da letra f.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>printf("Pressao: %d.1 bar\n", pressao);</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O especificador %d é para inteiros, não para floats.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>printf("Pressao: %.f bar\n", pressao);</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Sem o número após o ponto, essa formatação não solicita uma casa decimal.]]></text></feedback>
+    </answer>
+  </question>
+
+  <!-- Questão Assíncrona 5 -->
+  <question type="multichoice">
+    <name>
+      <text><![CDATA[M1 - Assíncrona 05 - Divisão Inteira]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+<p><strong>Objetivo de aprendizagem:</strong> Prever o resultado de uma divisão entre operandos int.</p>
+
+<div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; background-color: #ffffff; margin-bottom: 12px; font-family: Arial, sans-serif;">
+  <div style="margin-bottom: 10px;">
+    <span style="background-color: #0d6efd; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85em;">Geral</span>
+    <span style="background-color: #ffc107; color: #212529; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85em;">Operações Aritméticas</span>
+  </div>
+  <p style="font-size: 1.05em; color: #212529; line-height: 1.5;">
+    Considere o seguinte trecho de código:
+  </p>
+  <pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 12px; border-radius: 6px; font-family: 'Courier New', Courier, monospace; font-size: 0.95em;"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int x = 7;
+    int y = 2;
+    int quociente;
+
+    quociente = x / y;
+
+    printf("Quociente = %d\n", quociente);
+
+    return 0;
+}</code></pre>
+  <p style="font-size: 1.05em; color: #212529; line-height: 1.5;">
+    A saída impressa pelo programa será <code>Quociente = 3</code>. Por que o resultado não foi <code>3.5</code>?
+  </p>
+</div>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+<div style="background-color: #e7f1ff; border-left: 4px solid #0d6efd; padding: 12px; border-radius: 4px; font-family: Arial, sans-serif;">
+  <strong>Feedback Explicativo:</strong><br>
+  Quando os dois operandos da divisão são do tipo <code>int</code>, o compilador C executa uma divisão inteira. A parte decimal (<code>0.5</code>) é truncada/descartada, resultando apenas na parte inteira (<code>3</code>).
+</div>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Porque a divisão entre dois números inteiros em C resulta em uma divisão inteira, descartando a parte fracionária.]]></text>
+      <feedback format="html"><text><![CDATA[Exato! Em C, int / int sempre resulta em int.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Porque a variável <code>x</code> foi declarada com um valor ímpar.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Ser ímpar não impede divisões reais se os tipos forem float.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Porque o operador <code>/</code> calcula apenas o resto da divisão.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O operador para calcular o resto é o porcentagem (%).]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Porque a função <code>printf</code> não consegue imprimir números decimais.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O printf imprime decimais perfeitamente com %f.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Porque variáveis do tipo <code>int</code> não armazenam números com vírgula.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. A limitação aparece antes da atribuição: int / int já produz uma divisão inteira.]]></text></feedback>
+    </answer>
+  </question>
+
+  <!-- Questão Assíncrona 6 -->
+  <question type="multichoice">
+    <name>
+      <text><![CDATA[M1 - Assíncrona 06 - Lógica da Média (Uso de Parênteses)]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+<p><strong>Objetivo de aprendizagem:</strong> Corrigir uma expressão de média com parênteses adequados.</p>
+
+<div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; background-color: #ffffff; margin-bottom: 12px; font-family: Arial, sans-serif;">
+  <div style="margin-bottom: 10px;">
+    <span style="background-color: #0d6efd; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85em;">Informática</span>
+    <span style="background-color: #dc3545; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85em;">Erro de Lógica</span>
+  </div>
+  <p style="font-size: 1.05em; color: #212529; line-height: 1.5;">
+    Um aluno tentou escrever um código para calcular a média aritmética entre dois valores de consumo de energia:
+  </p>
+  <pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 12px; border-radius: 6px; font-family: 'Courier New', Courier, monospace; font-size: 0.95em;"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    float c1 = 100.0;
+    float c2 = 200.0;
+    float media;
+
+    media = c1 + c2 / 2.0;
+
+    printf("Media = %.1f\n", media);
+
+    return 0;
+}</code></pre>
+  <p style="font-size: 1.05em; color: #212529; line-height: 1.5;">
+    O valor exibido foi <code>200.0</code> ao invés de <code>150.0</code>. Qual é a alteração necessária na linha do cálculo para corrigir a lógica?
+  </p>
+</div>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+<div style="background-color: #e7f1ff; border-left: 4px solid #0d6efd; padding: 12px; border-radius: 4px; font-family: Arial, sans-serif;">
+  <strong>Feedback Explicativo:</strong><br>
+  Na expressão <code>c1 + c2 / 2.0</code>, a divisão de <code>c2 / 2.0</code> ocorre primeiro devido à precedência matemática. Para forçar a soma dos dois consumos antes de dividir por 2, deve-se usar parênteses: <code>(c1 + c2) / 2.0</code>.
+</div>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>media = (c1 + c2) / 2.0;</code>]]></text>
+      <feedback format="html"><text><![CDATA[Correto! Os parênteses garantem que a soma c1 + c2 seja executada antes da divisão.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>media = c1 + (c2 / 2.0);</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Essa expressão mantém o mesmo comportamento incorreto.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>media = c1 / 2.0 + c2;</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Isso dividirá apenas c1 por 2.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>media = (c1) + (c2 / 2.0);</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Parênteses individuais em c1 não alteram a prioridade da divisão.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>media = (c1 + c2 / 2.0) / 2.0;</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. A divisão de c2 por 2 continua ocorrendo antes da soma e o resultado ainda é dividido por 2.]]></text></feedback>
+    </answer>
+  </question>
+
+  <!-- Questão Assíncrona 7 -->
+  <question type="multichoice">
+    <name>
+      <text><![CDATA[M1 - Assíncrona 07 - Sintaxe Básica do C]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+<p><strong>Objetivo de aprendizagem:</strong> Reconhecer elementos básicos da sintaxe de um programa C.</p>
+
+<div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; background-color: #ffffff; margin-bottom: 12px; font-family: Arial, sans-serif;">
+  <div style="margin-bottom: 10px;">
+    <span style="background-color: #0d6efd; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85em;">Geral</span>
+    <span style="background-color: #6c757d; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85em;">Sintaxe</span>
+  </div>
+  <p style="font-size: 1.05em; color: #212529; line-height: 1.5;">
+    Avalie as afirmações a seguir sobre a estrutura básica de programas na linguagem C:
+  </p>
+  <ol style="font-size: 1em; color: #212529; line-height: 1.6;">
+    <li>A biblioteca <code>#include &lt;stdio.h&gt;</code> é necessária para usar as funções <code>printf</code> e <code>scanf</code>.</li>
+    <li>As instruções de comando em C dentro da função <code>main</code> devem ser finalizadas com ponto e vírgula (<code>;</code>).</li>
+    <li>A linguagem C ignora se as palavras reservadas são escritas em maiúsculas ou minúsculas (não é <em>case-sensitive</em>).</li>
+  </ol>
+  <p style="font-size: 1.05em; color: #212529;">Quais afirmativas estão <strong>corretas</strong>?</p>
+</div>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+<div style="background-color: #e7f1ff; border-left: 4px solid #0d6efd; padding: 12px; border-radius: 4px; font-family: Arial, sans-serif;">
+  <strong>Feedback Explicativo:</strong><br>
+  As afirmativas 1 e 2 são verdadeiras. A afirmativa 3 é falsa porque a linguagem C é <strong>case-sensitive</strong> (diferencia maiúsculas de minúsculas); portanto, <code>MAIN</code>, <code>Main</code> e <code>main</code> são tratados como identificadores diferentes.
+</div>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[Apenas 1 e 2.]]></text>
+      <feedback format="html"><text><![CDATA[Correto! A linguagem C é case-sensitive, tornando a afirmativa 3 incorreta.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Apenas 2 e 3.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. A afirmativa 1 é verdadeira e a 3 é falsa.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Apenas 1 e 3.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. A afirmativa 2 é verdadeira e a 3 é falsa.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Todas (1, 2 e 3).]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Lembre-se de que C diferencia maiúsculas e minúsculas.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[Apenas 1.]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Além da biblioteca ser necessária, os comandos em C também terminam com ponto e vírgula.]]></text></feedback>
+    </answer>
+  </question>
+
+  <!-- Questão Assíncrona 8 -->
+  <question type="multichoice">
+    <name>
+      <text><![CDATA[M1 - Assíncrona 08 - Algoritmo de Troca (Swap)]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+<p><strong>Objetivo de aprendizagem:</strong> Rastrear atribuições em uma troca de valores com variável auxiliar.</p>
+
+<div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; background-color: #ffffff; margin-bottom: 12px; font-family: Arial, sans-serif;">
+  <div style="margin-bottom: 10px;">
+    <span style="background-color: #0d6efd; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85em;">Geral</span>
+    <span style="background-color: #ffc107; color: #212529; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85em;">Teste de Mesa</span>
+  </div>
+  <p style="font-size: 1.05em; color: #212529; line-height: 1.5;">
+    Considere a sequência de instruções abaixo:
+  </p>
+  <pre style="background-color: #1e1e1e; color: #d4d4d4; padding: 12px; border-radius: 6px; font-family: 'Courier New', Courier, monospace; font-size: 0.95em;"><code>#include &lt;stdio.h&gt;
+
+int main() {
+    int v1 = 10;
+    int v2 = 25;
+    int aux;
+
+    aux = v1;
+    v1 = v2;
+    v2 = aux;
+
+    printf("v1 = %d e v2 = %d\n", v1, v2);
+
+    return 0;
+}</code></pre>
+  <p style="font-size: 1.05em; color: #212529; line-height: 1.5;">
+    Quais serão os valores de <code>v1</code> e <code>v2</code> exibidos ao final do programa?
+  </p>
+</div>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+<div style="background-color: #e7f1ff; border-left: 4px solid #0d6efd; padding: 12px; border-radius: 4px; font-family: Arial, sans-serif;">
+  <strong>Feedback Explicativo:</strong><br>
+  Este algoritmo realiza a troca (<em>swap</em>) entre duas variáveis usando uma variável temporária <code>aux</code>:<br>
+  1. <code>aux</code> guarda o valor original de <code>v1</code> (<code>10</code>).<br>
+  2. <code>v1</code> recebe o valor de <code>v2</code> (<code>25</code>).<br>
+  3. <code>v2</code> recebe o valor armazenado em <code>aux</code> (<code>10</code>).<br>
+  Ao final, <code>v1 = 25</code> e <code>v2 = 10</code>.
+</div>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>v1 = 10 e v2 = 25</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Os valores foram trocados entre as variáveis.]]></text></feedback>
+    </answer>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>v1 = 25 e v2 = 10</code>]]></text>
+      <feedback format="html"><text><![CDATA[Correto! A variável aux permitiu a troca de valores com sucesso.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>v1 = 25 e v2 = 25</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O valor original de v1 foi salvo na variável aux antes de ser sobrescrito.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>v1 = 10 e v2 = 10</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Siga o passo a passo da atribuição.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>v1 = 25 e v2 = 0</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. A variável aux recebe 10 antes da troca e esse valor é atribuído a v2.]]></text></feedback>
+    </answer>
+  </question>
+
+  <!-- Questão Assíncrona 9 -->
+  <question type="multichoice">
+    <name>
+      <text><![CDATA[M1 - Assíncrona 09 - Expressão Aritmética (Automação Industrial)]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+<p><strong>Objetivo de aprendizagem:</strong> Construir a expressão de uma conta com taxa fixa e consumo.</p>
+
+<div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; background-color: #ffffff; margin-bottom: 12px; font-family: Arial, sans-serif;">
+  <div style="margin-bottom: 10px;">
+    <span style="background-color: #198754; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85em;">Automação Industrial</span>
+    <span style="background-color: #6c757d; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85em;">Modelagem</span>
+  </div>
+  <p style="font-size: 1.05em; color: #212529; line-height: 1.5;">
+    A fórmula para calcular o valor de uma conta de energia com taxa fixa é dada por:
+  </p>
+  <div style="background-color: #f8f9fa; border: 1px dashed #6c757d; padding: 10px; border-radius: 4px; text-align: center; margin: 10px 0; font-size: 1.1em;">
+    <strong>Valor Total = Taxa Fixa + (Consumo kWh &times; Preço por kWh)</strong>
+  </div>
+  <p style="font-size: 1.05em; color: #212529; line-height: 1.5;">
+    Sendo todas as variáveis do tipo <code>float</code>, assinale a linha de código C que implementa essa equação respeitando a precedência dos operadores:
+  </p>
+</div>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+<div style="background-color: #e7f1ff; border-left: 4px solid #0d6efd; padding: 12px; border-radius: 4px; font-family: Arial, sans-serif;">
+  <strong>Feedback Explicativo:</strong><br>
+  Como a multiplicação (<code>*</code>) possui precedência natural sobre a adição (<code>+</code>), a expressão <code>taxaFixa + consumoKwh * precoKwh</code> executa a multiplicação primeiro e depois soma a taxa fixa, traduzindo fielmente a fórmula.
+</div>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[<code>valorTotal = taxaFixa + consumoKwh * precoKwh;</code>]]></text>
+      <feedback format="html"><text><![CDATA[Correto! A multiplicação é executada primeiro, respeitando a regra matemática.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>valorTotal = (taxaFixa + consumoKwh) * precoKwh;</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Os parênteses forçariam a soma da taxa antes da multiplicação.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>valorTotal = taxaFixa * precoKwh + consumoKwh;</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. A taxa fixa seria multiplicada incorretamente.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>valorTotal = (taxaFixa) * (consumoKwh + precoKwh);</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Altera completamente a estrutura da fórmula.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[<code>valorTotal = taxaFixa + (consumoKwh + precoKwh);</code>]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. Consumo deve ser multiplicado pelo preço por kWh antes da soma da taxa fixa.]]></text></feedback>
+    </answer>
+  </question>
+
+  <!-- Questão Assíncrona 10 -->
+  <question type="multichoice">
+    <name>
+      <text><![CDATA[M1 - Assíncrona 10 - Especificadores de Formato]]></text>
+    </name>
+    <questiontext format="html">
+      <text><![CDATA[
+<p><strong>Objetivo de aprendizagem:</strong> Relacionar %d e %f aos tipos int e float.</p>
+
+<div style="border: 1px solid #e0e0e0; border-radius: 8px; padding: 16px; background-color: #ffffff; margin-bottom: 12px; font-family: Arial, sans-serif;">
+  <div style="margin-bottom: 10px;">
+    <span style="background-color: #0d6efd; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85em;">Geral</span>
+    <span style="background-color: #6c757d; color: white; padding: 4px 10px; border-radius: 4px; font-weight: bold; font-size: 0.85em;">Especificadores</span>
+  </div>
+  <p style="font-size: 1.05em; color: #212529; line-height: 1.5;">
+    Associe os especificadores de formato da linguagem C aos seus respectivos tipos de dados:
+  </p>
+  <ul style="font-size: 1em; color: #212529; line-height: 1.6;">
+    <li><strong>1. <code>%d</code></strong></li>
+    <li><strong>2. <code>%f</code></strong></li>
+  </ul>
+  <p style="font-size: 1.05em; color: #212529;">Assinale a associação correta:</p>
+</div>
+      ]]></text>
+    </questiontext>
+    <generalfeedback format="html">
+      <text><![CDATA[
+<div style="background-color: #e7f1ff; border-left: 4px solid #0d6efd; padding: 12px; border-radius: 4px; font-family: Arial, sans-serif;">
+  <strong>Feedback Explicativo:</strong><br>
+  O especificador <code>%d</code> é utilizado para números inteiros (<code>int</code>), enquanto <code>%f</code> é utilizado para números reais de ponto flutuante (<code>float</code>).
+</div>
+      ]]></text>
+    </generalfeedback>
+    <defaultgrade>1.0000000</defaultgrade>
+    <penalty>0.3333333</penalty>
+    <hidden>0</hidden>
+    <single>true</single>
+    <shuffleanswers>true</shuffleanswers>
+    <answernumbering>abc</answernumbering>
+    <answer fraction="100" format="html">
+      <text><![CDATA[1 - Número inteiro (<code>int</code>); 2 - Número real (<code>float</code>).]]></text>
+      <feedback format="html"><text><![CDATA[Exato! %d é para inteiros e %f é para ponto flutuante.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[1 - Número real (<code>float</code>); 2 - Número inteiro (<code>int</code>).]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. A ordem dos especificadores está invertida.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[1 - Caractere (<code>char</code>); 2 - Número inteiro (<code>int</code>).]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O especificador para char é %c.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[1 - Número inteiro (<code>int</code>); 2 - Texto (<code>string</code>).]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O especificador para textos/strings é %s.]]></text></feedback>
+    </answer>
+    <answer fraction="0" format="html">
+      <text><![CDATA[1 - Número inteiro (<code>int</code>); 2 - Caractere (<code>char</code>).]]></text>
+      <feedback format="html"><text><![CDATA[Incorreto. O especificador para char é %c; %f representa números reais.]]></text></feedback>
+    </answer>
+  </question>
+
+</quiz>

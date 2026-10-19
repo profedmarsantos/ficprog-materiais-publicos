@@ -1,30 +1,30 @@
-# O repositorio GitHub e publico. Inclua apenas materiais estudantis aprovados,
-# o Markdown derivado e os arquivos necessarios para gerar e publicar o site.
+# Repositório público: somente fontes didáticas, validadores e publicação.
+# Planos internos, status, pareceres e arquivos docentes isolados permanecem locais.
 /*
-!/conteudo/
-/conteudo/*
-!/conteudo/modulo-01/
-/conteudo/modulo-01/*
-/conteudo/modulo-01/gabarito-docente.html
-/conteudo/modulo-01/questionario-*.xml
-!/conteudo/modulo-01/atividade-integrada-19-10.html
-!/conteudo/modulo-01/atividade-integrada-19-10.md
-!/conteudo/modulo-02/
-/conteudo/modulo-02/*
-/conteudo/modulo-02/questionario-*.xml
-!/conteudo/modulo-02/atividade-assincrona.html
-!/conteudo/dicas/
-/conteudo/dicas/*
-!/conteudo/dicas/painel-referencia-rapida-c.html
+!/.gitignore
 !/.github/
 /.github/*
-!/.github/workflows/
-/.github/workflows/*
-!/.github/workflows/deploy-pages.yml
 !/.github/scripts/
 /.github/scripts/*
 !/.github/scripts/Build-Publication.ps1
 !/.github/scripts/Sync-IntegratedActivityMarkdown.ps1
-!/.vscode/
-!/.vscode/tasks.json
-!/.gitignore
+!/.github/workflows/
+/.github/workflows/*
+!/.github/workflows/deploy-pages.yml
+!/conteudo/
+/conteudo/*
+!/conteudo/dicas/
+/conteudo/dicas/*
+!/conteudo/dicas/painel-referencia-rapida-c.html
+!/conteudo/modulo-*/
+/conteudo/modulo-*/*
+!/conteudo/modulo-*/atividade-integrada-*.html
+!/conteudo/modulo-*/lista-exercicios-sincrona.xml
+!/conteudo/modulo-*/questionario-assincrono.xml
+!/conteudo/modulo-*/roteiro-video-modulo-*-notebooklm.md
+!/conteudo/modulo-*/video-modulo-*-notebooklm.md
+!/scripts/
+/scripts/*
+!/scripts/Test-MoodleQuestionBank.ps1
+!/scripts/Test-MoodleExerciseList.ps1
+!/scripts/Test-ModulePackage.ps1

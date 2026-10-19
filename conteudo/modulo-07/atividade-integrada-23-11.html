@@ -1,0 +1,81 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Atividade integrada — Módulo 7</title><style>body{font:16px/1.55 Arial,sans-serif;background:#f5f8fc;color:#172033;margin:0}main{max-width:980px;margin:24px auto;padding:28px;background:#fff;border:1px solid #dbe4ee;border-radius:16px}header{background:linear-gradient(135deg,#0f172a,#075985);color:#fff;padding:26px;border-radius:12px}header p{margin:4px 0}h1{margin:6px 0}h2{color:#0c4a6e;margin-top:32px}h3{color:#173b55}a{color:#075985}.note{padding:14px;border-left:4px solid #d97706;background:#fffbeb;border-radius:6px}.exercise{border:1px solid #dbe4ee;border-radius:10px;padding:16px;margin:16px 0}table{width:100%;border-collapse:collapse;margin:10px 0}th,td{padding:9px;border:1px solid #dbe4ee;text-align:left;vertical-align:top}th{background:#edf5fb}.test{background:#f0fdf4;padding:10px;border-radius:6px}details{border:1px solid #bfdbfe;border-radius:8px;margin:12px 0}summary{background:#eff6ff;padding:12px;cursor:pointer;font-weight:700;color:#0c4a6e}.answer{padding:0 15px 15px}pre{white-space:pre;overflow:auto;padding:14px;background:#0f172a;color:#e2e8f0;border-radius:8px}code{font-family:Consolas,monospace}footer{font-size:13px;color:#475569;margin-top:30px}@media(max-width:700px){main{margin:0;padding:16px;border:0}table{display:block;overflow-x:auto}}</style></head><body><main><header><p>IFSP-SJP · Lógica de Programação Básica e Construção de Algoritmos</p><h1>Atividade integrada — Módulo 7</h1><p>Funções, parâmetros e retorno · 23/11/2026</p></header><section><h2>Encontro presencial</h2><p>Este módulo ocupa o encontro presencial de 2 horas. O professor selecionará os exercícios para trabalho em aula e poderá retomar os demais depois.</p><p>Para cada exercício presencial: identifique entrada, processamento e saída; implemente em C; execute o caso de teste; depure por teste de mesa. Um esquema ou pseudocódigo pode ajudar, mas não é entrega obrigatória.</p><p class="note"><strong>Organização:</strong> são quatro exercícios e um desafio opcional. A lista é um repertório para seleção do professor, não uma exigência de resolver todos durante as 2 horas do encontro.</p><article class="exercise" id="ex1"><h3>Exercício 1 — Custo de componentes</h3><p>Crie a função float custoItens(int quantidade, float preco) para calcular os componentes. Crie também float custoTotal(int quantidade, float preco, float frete), que chama custoItens e soma o frete. Em main, leia quantidade, preço e frete não negativos; mostre custo dos itens e total.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>quantidade inteira, preço e frete reais</td><td>custoItens = quantidade × preço; custoTotal chama custoItens e soma frete</td><td>custo dos itens e total com frete</td></tr></table><p class="test"><strong>Caso de teste:</strong> 6 unidades a R$ 2.50, frete R$ 3.00 → <strong>resultado esperado:</strong> Itens: R$ 15.00; total: R$ 18.00</p></article>
+<article class="exercise" id="ex2"><h3>Exercício 2 — Área de piso</h3><p>Crie uma função float area(float largura, float comprimento) que retorna a área retangular. Leia as medidas positivas e mostre a área com duas casas.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>largura e comprimento reais positivos</td><td>retornar largura × comprimento</td><td>área</td></tr></table><p class="test"><strong>Caso de teste:</strong> largura 3.5 m, comprimento 4.0 m → <strong>resultado esperado:</strong> Area: 14.00 m2</p></article>
+<article class="exercise" id="ex3"><h3>Exercício 3 — Maior de dois valores</h3><p>Crie uma função int maior(int a, int b) que retorna o maior. Leia dois inteiros e exiba o retorno; em empate, pode retornar qualquer um porque são iguais.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>dois inteiros</td><td>if a &gt;= b retorna a, senão b</td><td>maior valor</td></tr></table><p class="test"><strong>Caso de teste:</strong> 12 e 19 → <strong>resultado esperado:</strong> Maior: 19</p></article>
+<article class="exercise" id="ex4"><h3>Exercício 4 — Procedimento de relatório</h3><p>Crie um procedimento void mostrarRelatorio(int codigo, float valor) para imprimir código e valor. main lê os dois dados e chama o procedimento uma vez.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>código inteiro e valor real</td><td>procedimento recebe os dados e imprime; não retorna valor</td><td>linha de relatório</td></tr></table><p class="test"><strong>Caso de teste:</strong> código 42, valor R$ 18.75 → <strong>resultado esperado:</strong> Codigo 42: R$ 18.75</p></article><article class="exercise"><h3>Desafio opcional — Função para verificar paridade</h3><p>Crie int ehPar(int n), que retorna 1 para inteiro par e 0 para ímpar. Leia um número e imprima 'Par' ou 'Impar' conforme o retorno.</p><p class="test"><strong>Caso de teste:</strong> n=14 → <strong>resultado esperado:</strong> Par</p></article><h3>Entrega e conferência</h3><p>Para os exercícios selecionados, mostre a análise do problema, o programa C, a saída obtida e um teste de mesa que explique o valor das variáveis. A escrita formal de pseudocódigo não é exigida.</p></section><section><h2>Gabarito docente</h2><p>Abra cada solução depois da tentativa dos estudantes. Os programas usam apenas os recursos introdutórios estudados até este módulo.</p><details><summary>Exercício 1 — Custo de componentes</summary><div class="answer"><p><strong>Resposta esperada:</strong> custoItens retorna 15.00; custoTotal chama custoItens com os mesmos dados e retorna 15.00 + 3.00 = 18.00.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+float custoItens(int quantidade, float preco) {
+    return quantidade * preco;
+}
+
+float custoTotal(int quantidade, float preco, float frete) {
+    return custoItens(quantidade, preco) + frete;
+}
+
+int main(void) {
+    int quantidade;
+    float preco, frete, itens, total;
+    scanf(&quot;%d %f %f&quot;, &amp;quantidade, &amp;preco, &amp;frete);
+    itens = custoItens(quantidade, preco);
+    total = custoTotal(quantidade, preco, frete);
+    printf(&quot;Itens: R$ %.2f; total: R$ %.2f\n&quot;, itens, total);
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>main lê 6, 2.50 e 3.00; custoItens(6, 2.50) retorna 15.00. Na chamada de custoTotal, a função chama custoItens(6, 2.50), recebe 15.00 e soma frete 3.00; retorna 18.00 a main. Confira separadamente as duas saídas para detectar dupla cobrança de frete.</p></div></details>
+<details><summary>Exercício 2 — Área de piso</summary><div class="answer"><p><strong>Resposta esperada:</strong> A área é 3.5×4.0=14.00 m².</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+float area(float largura, float comprimento) {
+    return largura * comprimento;
+}
+
+int main(void) {
+    float largura, comprimento;
+    scanf(&quot;%f %f&quot;, &amp;largura, &amp;comprimento);
+    printf(&quot;Area: %.2f m2\n&quot;, area(largura, comprimento));
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>Parâmetros recebem 3.5 e 4.0; a expressão retorna 14.0; printf formata com duas casas. A função não lê nem imprime dados: ela só calcula.</p></div></details>
+<details><summary>Exercício 3 — Maior de dois valores</summary><div class="answer"><p><strong>Resposta esperada:</strong> 19 supera 12.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int maior(int a, int b) {
+    if (a &gt;= b) {
+        return a;
+    }
+    return b;
+}
+
+int main(void) {
+    int a, b;
+    scanf(&quot;%d %d&quot;, &amp;a, &amp;b);
+    printf(&quot;Maior: %d\n&quot;, maior(a, b));
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>a=12, b=19; 12&gt;=19 é falso; execução chega a return b e devolve 19. Para 12 e 12, o primeiro retorno devolve 12.</p></div></details>
+<details><summary>Exercício 4 — Procedimento de relatório</summary><div class="answer"><p><strong>Resposta esperada:</strong> A saída é produzida dentro do procedimento após a chamada.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+void mostrarRelatorio(int codigo, float valor) {
+    printf(&quot;Codigo %d: R$ %.2f\n&quot;, codigo, valor);
+}
+
+int main(void) {
+    int codigo;
+    float valor;
+    scanf(&quot;%d %f&quot;, &amp;codigo, &amp;valor);
+    mostrarRelatorio(codigo, valor);
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>main lê 42 e 18.75; a chamada copia para codigo e valor do procedimento; printf imprime a linha; o controle volta a main. Não há return de valor em void.</p></div></details>
+<details><summary>Desafio opcional — Função para verificar paridade</summary><div class="answer"><p><strong>Resposta esperada:</strong> 14%2=0, então a função retorna 1.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int ehPar(int n) {
+    if (n % 2 == 0) {
+        return 1;
+    }
+    return 0;
+}
+
+int main(void) {
+    int n;
+    scanf(&quot;%d&quot;, &amp;n);
+    if (ehPar(n) == 1) {
+        printf(&quot;Par\n&quot;);
+    } else {
+        printf(&quot;Impar\n&quot;);
+    }
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>n=14 é passado à função; 14%2=0 torna a condição verdadeira; retorno=1; main escolhe Par. Com 15, retorno=0 e imprime Impar.</p></div></details></section><section><h2>Atividade EAD — 5h</h2><p>Estudo individual orientado após o encontro. Faça as etapas na ordem e consulte o <a href="../dicas/painel-referencia-rapida-c.html">painel de referência rápida de C</a> somente para comandos já abordados.</p><table><tr><th scope="col">Etapa</th><th scope="col">Tempo planejado</th><th scope="col">Ação</th></tr><tr><td>Estudo e prática</td><td>4h15</td><td>Identifique em cada programa o que é passado para a função, o valor retornado e a responsabilidade de main; pratique funções com um cálculo definido.</td></tr><tr><td>Questionário objetivo do Módulo 7</td><td>45 min</td><td>Responda no Moodle, envie a tentativa e leia os feedbacks para revisar os erros.</td></tr></table><p>Trace a passagem de parâmetros e o retorno em cada chamada. Altere entradas e confirme que a função resolve o mesmo problema sem duplicar cálculos.</p><p class="note"><strong>Registro da carga EAD:</strong> quando o questionário for o único registro no Moodle, sua conclusão representa a carga planejada do bloco EAD deste módulo (5h), que inclui o estudo orientado. Esse registro não mede o tempo real que cada estudante dedicou às etapas.</p></section><footer>Material autocontido para leitura, prática e conferência docente. Data do encontro: 23/11/2026.</footer></main></body></html>

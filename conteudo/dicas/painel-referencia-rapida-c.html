@@ -13,20 +13,20 @@
         <td width="50%" valign="top" style="padding:17px; border:1px solid #fcd34d; border-radius:5px; background:#fef3c7; box-shadow:4px 5px 0 rgba(146,64,14,.14); transform:rotate(-.5deg);">
           <p style="margin:0 0 7px; color:#92400e; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;">Post-it 01 · Tipos</p>
           <p style="margin:0 0 10px; font-size:17px; font-weight:700;">Que tipo de valor vou guardar?</p>
-          <table width="100%" cellspacing="0" cellpadding="6" style="border-collapse:collapse; color:#713f12; font-size:13px;"><tr><td style="border-top:1px dashed #f59e0b;"><code>int</code></td><td style="border-top:1px dashed #f59e0b;">inteiros</td><td style="border-top:1px dashed #f59e0b;">7, 25, -3</td></tr><tr><td><code>float</code></td><td>decimais</td><td>7.5, 0.25</td></tr><tr><td><code>double</code></td><td>mais precisão</td><td>7.500000</td></tr><tr><td><code>char</code></td><td>um caractere</td><td>'A', 'x'</td></tr></table>
+          <table width="100%" cellspacing="0" cellpadding="6" style="border-collapse:collapse; color:#713f12; font-size:13px;"><tr><td style="border-top:1px dashed #f59e0b;"><code>int</code></td><td style="border-top:1px dashed #f59e0b;">inteiros</td><td style="border-top:1px dashed #f59e0b;">7, 25, -3</td></tr><tr><td><code>float</code></td><td>decimais</td><td>7.5, 0.25</td></tr></table>
         </td>
         <td width="50%" valign="top" style="padding:17px; border:1px solid #a5b4fc; border-radius:5px; background:#e0e7ff; box-shadow:4px 5px 0 rgba(49,46,129,.14); transform:rotate(.45deg);">
           <p style="margin:0 0 7px; color:#4338ca; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;">Post-it 02 · Mapa dos formatos</p>
           <p style="margin:0 0 10px; font-size:17px; font-weight:700;">O formato depende do comando.</p>
-          <table width="100%" cellspacing="0" cellpadding="6" style="border-collapse:collapse; color:#3730a3; font-size:13px;"><tr style="font-weight:700;"><td style="border-top:1px dashed #818cf8;">Tipo</td><td style="border-top:1px dashed #818cf8;"><code>scanf</code></td><td style="border-top:1px dashed #818cf8;"><code>printf</code></td></tr><tr><td><code>int</code></td><td><code>%d</code></td><td><code>%d</code></td></tr><tr><td><code>float</code></td><td><code>%f</code></td><td><code>%f</code></td></tr><tr><td><code>double</code></td><td><code>%lf</code></td><td><code>%f</code></td></tr><tr><td><code>char</code></td><td><code>%c</code></td><td><code>%c</code></td></tr></table>
+          <table width="100%" cellspacing="0" cellpadding="6" style="border-collapse:collapse; color:#3730a3; font-size:13px;"><tr style="font-weight:700;"><td style="border-top:1px dashed #818cf8;">Tipo</td><td style="border-top:1px dashed #818cf8;"><code>scanf</code></td><td style="border-top:1px dashed #818cf8;"><code>printf</code></td></tr><tr><td><code>int</code></td><td><code>%d</code></td><td><code>%d</code></td></tr><tr><td><code>float</code></td><td><code>%f</code></td><td><code>%f</code></td></tr></table>
         </td>
       </tr>
       <tr>
         <td width="50%" valign="top" style="padding:17px; border:1px solid #86efac; border-radius:5px; background:#dcfce7; box-shadow:4px 5px 0 rgba(20,83,45,.13); transform:rotate(.35deg);">
           <p style="margin:0 0 7px; color:#15803d; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;">Post-it 03 · Declarar e ler</p>
           <p style="margin:0 0 10px; font-size:17px; font-weight:700;">Prepare as variáveis e peça os dados.</p>
-          <pre style="margin:0; padding:12px; overflow:auto; border-radius:6px; color:#ecfdf5; background:#14532d; font:13px/1.45 Consolas, 'Courier New', monospace;"><code>int quantidade;&#10;float preco;&#10;double medida;&#10;char letra;&#10;&#10;scanf("%d", &amp;quantidade);&#10;scanf("%f", &amp;preco);&#10;scanf("%lf", &amp;medida);&#10;scanf(" %c", &amp;letra);</code></pre>
-          <p style="margin:10px 0 0; color:#166534; font-size:13px;"><code>&amp;</code> vai antes da variável. O espaço em <code>" %c"</code> ignora uma quebra de linha anterior.</p>
+          <pre style="margin:0; padding:12px; overflow:auto; border-radius:6px; color:#ecfdf5; background:#14532d; font:13px/1.45 Consolas, 'Courier New', monospace;"><code>int quantidade;&#10;float preco;&#10;&#10;scanf("%d", &amp;quantidade);&#10;scanf("%f", &amp;preco);</code></pre>
+          <p style="margin:10px 0 0; color:#166534; font-size:13px;"><code>&amp;</code> vai antes da variável.</p>
         </td>
         <td width="50%" valign="top" style="padding:17px; border:1px solid #f9a8d4; border-radius:5px; background:#fce7f3; box-shadow:4px 5px 0 rgba(157,23,77,.13); transform:rotate(-.3deg);">
           <p style="margin:0 0 7px; color:#be185d; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;">Post-it 04 · printf com texto</p>
@@ -39,14 +39,14 @@
         <td width="50%" valign="top" style="padding:17px; border:1px solid #67e8f9; border-radius:5px; background:#cffafe; box-shadow:4px 5px 0 rgba(14,116,144,.13); transform:rotate(-.35deg);">
           <p style="margin:0 0 7px; color:#0e7490; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;">Post-it 05 · printf com variável</p>
           <p style="margin:0 0 10px; font-size:17px; font-weight:700;">Formato no texto + variável após a vírgula.</p>
-          <pre style="margin:0; padding:12px; overflow:auto; border-radius:6px; color:#ecfeff; background:#155e75; font:13px/1.45 Consolas, 'Courier New', monospace;"><code>printf("Qtd.: %d\n", quantidade);&#10;printf("Preço: %.2f\n", preco);&#10;printf("Medida: %.3f\n", medida);&#10;printf("Letra: %c\n", letra);</code></pre>
+          <pre style="margin:0; padding:12px; overflow:auto; border-radius:6px; color:#ecfeff; background:#155e75; font:13px/1.45 Consolas, 'Courier New', monospace;"><code>printf("Qtd.: %d\n", quantidade);&#10;printf("Preço: %.2f\n", preco);</code></pre>
           <p style="margin:10px 0 0; color:#155e75; font-size:13px;">A ordem das variáveis deve acompanhar a ordem dos formatos.</p>
         </td>
         <td width="50%" valign="top" style="padding:17px; border:1px solid #fdba74; border-radius:5px; background:#ffedd5; box-shadow:4px 5px 0 rgba(154,52,18,.13); transform:rotate(.3deg);">
           <p style="margin:0 0 7px; color:#c2410c; font-size:12px; font-weight:700; letter-spacing:.06em; text-transform:uppercase;">Post-it 06 · Decimais e vírgula</p>
           <p style="margin:0 0 10px; font-size:17px; font-weight:700;">Escolha quantas casas quer mostrar.</p>
           <pre style="margin:0; padding:12px; overflow:auto; border-radius:6px; color:#fff7ed; background:#9a3412; font:13px/1.45 Consolas, 'Courier New', monospace;"><code>printf("%.1f", preco);  /* 7.5 */&#10;printf("%.2f", preco);  /* 7.50 */&#10;printf("%.3f", preco);  /* 7.500 */</code></pre>
-          <p style="margin:10px 0 0; color:#9a3412; font-size:13px;">Neste módulo, use ponto nos valores decimais: <code>7.50</code>.</p>
+          <p style="margin:10px 0 0; color:#9a3412; font-size:13px;">Em entradas de teste, use ponto nos valores decimais: <code>7.50</code>.</p>
         </td>
       </tr>
       <tr>
@@ -64,5 +64,30 @@
       </tr>
     </table>
   </div>
-  <div style="padding:12px 24px; border-top:1px solid #dbe4ee; color:#475569; background:#ffffff; font-size:12px;">Sequência de trabalho: problema → pseudocódigo → C → execução → depuração/teste de mesa.</div>
+<section id="modulo-02" style="margin:18px 24px;padding:18px;border:1px solid #c7d2fe;border-radius:10px;background:#fff"><p style="margin:0;color:#4338ca;font-size:12px;font-weight:700;text-transform:uppercase">Módulo 02</p><h3 style="margin:6px 0;color:#312e81">Tipos e expressões</h3><p style="margin:0 0 10px"><strong><code>int</code>, <code>float</code>, precedência e divisão inteira</strong></p><div style="font-size:14px;line-height:1.5"><pre><code>int metade = 5 / 2;       /* 2 */
+float media = (a + b) / 2.0f;
+int resto = 7 % 3;        /* 1 */</code></pre><p>Use parênteses para deixar a conta clara. Divisão entre inteiros descarta a parte fracionária.</p></div></section>
+<section id="modulo-03" style="margin:18px 24px;padding:18px;border:1px solid #c7d2fe;border-radius:10px;background:#fff"><p style="margin:0;color:#4338ca;font-size:12px;font-weight:700;text-transform:uppercase">Módulo 03</p><h3 style="margin:6px 0;color:#312e81">Sequência e organização</h3><p style="margin:0 0 10px"><strong>Múltiplas entradas e saídas</strong></p><div style="font-size:14px;line-height:1.5"><pre><code>scanf("%d %f", &amp;quantidade, &amp;preco);
+total = quantidade * preco;
+printf("Total: %.2f\n", total);</code></pre><p>Declare, leia, calcule e mostre nessa ordem. Confira cada valor no teste de mesa.</p></div></section>
+<section id="modulo-04" style="margin:18px 24px;padding:18px;border:1px solid #c7d2fe;border-radius:10px;background:#fff"><p style="margin:0;color:#4338ca;font-size:12px;font-weight:700;text-transform:uppercase">Módulo 04</p><h3 style="margin:6px 0;color:#312e81">Decisões</h3><p style="margin:0 0 10px"><strong>Comparações e caminhos</strong></p><div style="font-size:14px;line-height:1.5"><pre><code>if (media &gt;= 6.0f) {
+    printf("Aprovado\n");
+} else if (media &gt;= 4.0f) {
+    printf("Recuperacao\n");
+} else {
+    printf("Reprovado\n");
+}</code></pre><p>Use <code>==</code> para comparar igualdade; <code>=</code> atribui. <code>&amp;&amp;</code> exige duas condições; <code>||</code> aceita uma delas. <code>switch</code> pode selecionar alternativas por valor inteiro.</p></div></section>
+<section id="modulo-05" style="margin:18px 24px;padding:18px;border:1px solid #c7d2fe;border-radius:10px;background:#fff"><p style="margin:0;color:#4338ca;font-size:12px;font-weight:700;text-transform:uppercase">Módulo 05</p><h3 style="margin:6px 0;color:#312e81">Repetições</h3><p style="margin:0 0 10px"><strong>Escolha o laço pelo problema</strong></p><div style="font-size:14px;line-height:1.5"><pre><code>for (i = 0; i &lt; 5; i++) { soma += valor; }
+while (valor != 0) { scanf("%d", &amp;valor); }
+do { scanf("%d", &amp;opcao); } while (opcao != 0);</code></pre><p><code>for</code> serve para contagem conhecida; <code>while</code> testa antes; <code>do...while</code> executa ao menos uma vez. Atualize a variável de controle.</p></div></section>
+<section id="modulo-06" style="margin:18px 24px;padding:18px;border:1px solid #c7d2fe;border-radius:10px;background:#fff"><p style="margin:0;color:#4338ca;font-size:12px;font-weight:700;text-transform:uppercase">Módulo 06</p><h3 style="margin:6px 0;color:#312e81">Vetores</h3><p style="margin:0 0 10px"><strong>Índices e percurso</strong></p><div style="font-size:14px;line-height:1.5"><pre><code>int leituras[5];
+for (i = 0; i &lt; 5; i++) {
+    scanf("%d", &amp;leituras[i]);
+}</code></pre><p>Em um vetor de cinco posições, os índices válidos são 0, 1, 2, 3 e 4. Não acesse a posição 5.</p></div></section>
+<section id="modulo-07" style="margin:18px 24px;padding:18px;border:1px solid #c7d2fe;border-radius:10px;background:#fff"><p style="margin:0;color:#4338ca;font-size:12px;font-weight:700;text-transform:uppercase">Módulo 07</p><h3 style="margin:6px 0;color:#312e81">Funções</h3><p style="margin:0 0 10px"><strong>Parâmetros e retorno</strong></p><div style="font-size:14px;line-height:1.5"><pre><code>int dobro(int valor) {
+    return 2 * valor;
+}
+/* uso: resultado = dobro(3); */</code></pre><p>Parâmetros recebem os dados da chamada. Uma função com tipo de retorno entrega um valor; um procedimento <code>void</code> executa uma ação sem devolver valor.</p></div></section>
+<section id="modulo-08" style="margin:18px 24px;padding:18px;border:1px solid #c7d2fe;border-radius:10px;background:#fff"><p style="margin:0;color:#4338ca;font-size:12px;font-weight:700;text-transform:uppercase">Módulo 08</p><h3 style="margin:6px 0;color:#312e81">Integração</h3><p style="margin:0 0 10px"><strong>Combine recursos já estudados</strong></p><div style="font-size:14px;line-height:1.5"><p>Para problemas como caixa eletrônico e estacionamento, separe entradas, regras, estado que muda e saídas. Faça casos normais, limites e recusas. Combine decisões, laços, vetores e funções simples somente quando ajudarem a explicar a solução.</p><p>Arduino no Tinkercad é exploração opcional do Módulo 8; as funções próprias desse ambiente não integram este painel de C introdutório.</p></div></section>
+  <div style="padding:12px 24px; border-top:1px solid #dbe4ee; color:#475569; background:#ffffff; font-size:12px;">Sequência de trabalho: problema → representação → C → execução → depuração/teste de mesa. Pseudocódigo estruturado é exigido apenas nos módulos 1 e 2.</div>
 </div>

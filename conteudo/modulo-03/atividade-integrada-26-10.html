@@ -1,0 +1,61 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Atividade integrada — Módulo 3</title><style>body{font:16px/1.55 Arial,sans-serif;background:#f5f8fc;color:#172033;margin:0}main{max-width:980px;margin:24px auto;padding:28px;background:#fff;border:1px solid #dbe4ee;border-radius:16px}header{background:linear-gradient(135deg,#0f172a,#075985);color:#fff;padding:26px;border-radius:12px}header p{margin:4px 0}h1{margin:6px 0}h2{color:#0c4a6e;margin-top:32px}h3{color:#173b55}a{color:#075985}.note{padding:14px;border-left:4px solid #d97706;background:#fffbeb;border-radius:6px}.exercise{border:1px solid #dbe4ee;border-radius:10px;padding:16px;margin:16px 0}table{width:100%;border-collapse:collapse;margin:10px 0}th,td{padding:9px;border:1px solid #dbe4ee;text-align:left;vertical-align:top}th{background:#edf5fb}.test{background:#f0fdf4;padding:10px;border-radius:6px}details{border:1px solid #bfdbfe;border-radius:8px;margin:12px 0}summary{background:#eff6ff;padding:12px;cursor:pointer;font-weight:700;color:#0c4a6e}.answer{padding:0 15px 15px}pre{white-space:pre;overflow:auto;padding:14px;background:#0f172a;color:#e2e8f0;border-radius:8px}code{font-family:Consolas,monospace}footer{font-size:13px;color:#475569;margin-top:30px}@media(max-width:700px){main{margin:0;padding:16px;border:0}table{display:block;overflow-x:auto}}</style></head><body><main><header><p>IFSP-SJP · Lógica de Programação Básica e Construção de Algoritmos</p><h1>Atividade integrada — Módulo 3</h1><p>Estrutura sequencial e múltiplas entradas e saídas · 26/10/2026</p></header><section><h2>Encontro presencial</h2><p>Este módulo compartilha as 2 horas presenciais do encontro com o Módulo 4. O professor selecionará os exercícios a trabalhar em aula; os demais ficam para estudo e retomada.</p><p>Para cada exercício presencial: identifique entrada, processamento e saída; implemente em C; execute o caso de teste; depure por teste de mesa. Um esquema ou pseudocódigo pode ajudar, mas não é entrega obrigatória.</p><p class="note"><strong>Organização:</strong> são quatro exercícios e um desafio opcional. A lista é um repertório para seleção do professor, não uma exigência de resolver todos durante as 2 horas do encontro.</p><article class="exercise" id="ex1"><h3>Exercício 1 — Ordem de serviço</h3><p>Uma oficina usa duas peças: leia quantidades inteiras, preços unitários reais e valor real da mão de obra. Mostre o custo de cada peça e o total da ordem, com duas casas. Considere valores não negativos.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>q1, q2, p1, p2, maoObra</td><td>parcial1=q1*p1; parcial2=q2*p2; total=parcial1+parcial2+maoObra</td><td>dois parciais e total</td></tr></table><p class="test"><strong>Caso de teste:</strong> q1=2, p1=12.50, q2=3, p2=4.00, mão de obra=20.00 → <strong>resultado esperado:</strong> Peca 1: R$ 25.00; peca 2: R$ 12.00; total: R$ 57.00</p></article>
+<article class="exercise" id="ex2"><h3>Exercício 2 — Leituras de temperatura</h3><p>Leia a temperatura em Celsius. Mostre a conversão para Fahrenheit e Kelvin. Use F = C × 9/5 + 32 e K = C + 273.15.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>Celsius: float</td><td>fahrenheit=celsius*9.0/5.0+32; kelvin=celsius+273.15</td><td>Fahrenheit e Kelvin</td></tr></table><p class="test"><strong>Caso de teste:</strong> 25.0 C → <strong>resultado esperado:</strong> Fahrenheit: 77.00 F; Kelvin: 298.15 K</p></article>
+<article class="exercise" id="ex3"><h3>Exercício 3 — Balanço de um reservatório</h3><p>Leia volume inicial, entrada e consumo, todos reais e não negativos. Mostre o volume antes do consumo e o volume final. Assuma que o consumo não supera o volume disponível.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>inicial, entrada, consumo</td><td>disponivel=inicial+entrada; final=disponivel-consumo</td><td>disponível e final</td></tr></table><p class="test"><strong>Caso de teste:</strong> inicial 80.0 L, entrada 25.5 L, consumo 40.0 L → <strong>resultado esperado:</strong> Disponivel: 105.50 L; final: 65.50 L</p></article>
+<article class="exercise" id="ex4"><h3>Exercício 4 — Pedido de impressão</h3><p>Leia número de páginas preto e branco e coloridas, ambos inteiros não negativos, e o preço real de cada modalidade. Mostre quantidade total de páginas e custo total.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>pB, pC, precoB, precoC</td><td>paginas=pB+pC; custo=pB*precoB+pC*precoC</td><td>páginas e custo</td></tr></table><p class="test"><strong>Caso de teste:</strong> 20 páginas P&amp;B a R$ 0.15; 4 coloridas a R$ 0.80 → <strong>resultado esperado:</strong> Paginas: 24; custo: R$ 6.20</p></article><article class="exercise"><h3>Desafio opcional — Kit com embalagem e frete</h3><p>Leia quantidades e preços de dois produtos, custo da embalagem e frete. Mostre subtotal de produtos, custo adicional e total. Considere valores não negativos.</p><p class="test"><strong>Caso de teste:</strong> 2×R$ 8.00, 1×R$ 15.00, embalagem R$ 2.50, frete R$ 6.00 → <strong>resultado esperado:</strong> Produtos: R$ 31.00; adicionais: R$ 8.50; total: R$ 39.50</p></article><h3>Entrega e conferência</h3><p>Para os exercícios selecionados, mostre a análise do problema, o programa C, a saída obtida e um teste de mesa que explique o valor das variáveis. A escrita formal de pseudocódigo não é exigida.</p></section><section><h2>Gabarito docente</h2><p>Abra cada solução depois da tentativa dos estudantes. Os programas usam apenas os recursos introdutórios estudados até este módulo.</p><details><summary>Exercício 1 — Ordem de serviço</summary><div class="answer"><p><strong>Resposta esperada:</strong> Os dois parciais são 25.00 e 12.00; com a mão de obra, o total é 57.00.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int q1, q2;
+    float p1, p2, maoObra, parcial1, parcial2, total;
+    scanf(&quot;%d %f %d %f %f&quot;, &amp;q1, &amp;p1, &amp;q2, &amp;p2, &amp;maoObra);
+    parcial1 = q1 * p1;
+    parcial2 = q2 * p2;
+    total = parcial1 + parcial2 + maoObra;
+    printf(&quot;Peca 1: R$ %.2f; peca 2: R$ %.2f; total: R$ %.2f\n&quot;,
+           parcial1, parcial2, total);
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>Após a leitura, parcial1=2×12.50=25.00; parcial2=3×4.00=12.00; total=25+12+20=57. Calcular o total antes dos parciais usaria valores ainda não definidos.</p></div></details>
+<details><summary>Exercício 2 — Leituras de temperatura</summary><div class="answer"><p><strong>Resposta esperada:</strong> 25 °C correspondem a 77 °F e 298.15 K.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    float celsius, fahrenheit, kelvin;
+    scanf(&quot;%f&quot;, &amp;celsius);
+    fahrenheit = celsius * 9.0f / 5.0f + 32.0f;
+    kelvin = celsius + 273.15f;
+    printf(&quot;Fahrenheit: %.2f F; Kelvin: %.2f K\n&quot;,
+           fahrenheit, kelvin);
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>Com celsius=25, a multiplicação por 9/5 dá 45; somando 32, fahrenheit=77. Kelvin=25+273.15=298.15. Confira a ordem das operações para não somar 32 antes da multiplicação.</p></div></details>
+<details><summary>Exercício 3 — Balanço de um reservatório</summary><div class="answer"><p><strong>Resposta esperada:</strong> A entrada é somada antes de subtrair o consumo.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    float inicial, entrada, consumo, disponivel, final;
+    scanf(&quot;%f %f %f&quot;, &amp;inicial, &amp;entrada, &amp;consumo);
+    disponivel = inicial + entrada;
+    final = disponivel - consumo;
+    printf(&quot;Disponivel: %.2f L; final: %.2f L\n&quot;, disponivel, final);
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>Após a leitura: inicial=80, entrada=25.5, consumo=40. Disponível recebe 105.5; final recebe 65.5. Se subtrair antes de somar, o total pode coincidir, mas deixa de representar corretamente o estado intermediário pedido.</p></div></details>
+<details><summary>Exercício 4 — Pedido de impressão</summary><div class="answer"><p><strong>Resposta esperada:</strong> A contagem total é 24 e o custo é 3.00 + 3.20 = 6.20.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int pB, pC, paginas;
+    float precoB, precoC, custo;
+    scanf(&quot;%d %f %d %f&quot;, &amp;pB, &amp;precoB, &amp;pC, &amp;precoC);
+    paginas = pB + pC;
+    custo = pB * precoB + pC * precoC;
+    printf(&quot;Paginas: %d; custo: R$ %.2f\n&quot;, paginas, custo);
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>pB=20, pC=4, páginas=24. Parcial P&amp;B=20×0.15=3.00; colorida=4×0.80=3.20; custo=6.20. Preços e quantidades precisam ficar associados à modalidade correta.</p></div></details>
+<details><summary>Desafio opcional — Kit com embalagem e frete</summary><div class="answer"><p><strong>Resposta esperada:</strong> Produtos somam 31.00, adicionais somam 8.50, total 39.50.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int q1, q2;
+    float p1, p2, embalagem, frete, produtos, adicionais, total;
+    scanf(&quot;%d %f %d %f %f %f&quot;, &amp;q1, &amp;p1, &amp;q2, &amp;p2, &amp;embalagem, &amp;frete);
+    produtos = q1 * p1 + q2 * p2;
+    adicionais = embalagem + frete;
+    total = produtos + adicionais;
+    printf(&quot;Produtos: R$ %.2f; adicionais: R$ %.2f; total: R$ %.2f\n&quot;,
+           produtos, adicionais, total);
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>produtos=2×8+1×15=31; adicionais=2.50+6=8.50; total=39.50. Confira se cada saída usa a variável correspondente.</p></div></details></section><section><h2>Atividade EAD — 2h15</h2><p>Estudo individual orientado após o encontro. Faça as etapas na ordem e consulte o <a href="../dicas/painel-referencia-rapida-c.html">painel de referência rápida de C</a> somente para comandos já abordados.</p><table><tr><th scope="col">Etapa</th><th scope="col">Tempo planejado</th><th scope="col">Ação</th></tr><tr><td>Estudo e prática</td><td>1h30</td><td>Releia os programas sequenciais, identifique a ordem de leitura, cálculo e exibição, e refaça testes com novos dados de entrada.</td></tr><tr><td>Questionário objetivo do Módulo 3</td><td>45 min</td><td>Responda no Moodle, envie a tentativa e leia os feedbacks para revisar os erros.</td></tr></table><p>Faça um quadro Entrada → Processamento → Saída para dois exercícios; execute seus programas, compare saídas e corrija uma alteração proposital na ordem das atribuições antes de responder ao questionário.</p><p class="note"><strong>Registro da carga EAD:</strong> quando o questionário for o único registro no Moodle, sua conclusão representa a carga planejada do bloco EAD deste módulo (2h15), que inclui o estudo orientado. Esse registro não mede o tempo real que cada estudante dedicou às etapas.</p></section><footer>Material autocontido para leitura, prática e conferência docente. Data do encontro: 26/10/2026.</footer></main></body></html>

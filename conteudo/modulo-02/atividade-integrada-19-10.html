@@ -1,0 +1,93 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Atividade integrada — Módulo 2</title><style>body{font:16px/1.55 Arial,sans-serif;background:#f5f8fc;color:#172033;margin:0}main{max-width:980px;margin:24px auto;padding:28px;background:#fff;border:1px solid #dbe4ee;border-radius:16px}header{background:linear-gradient(135deg,#0f172a,#075985);color:#fff;padding:26px;border-radius:12px}header p{margin:4px 0}h1{margin:6px 0}h2{color:#0c4a6e;margin-top:32px}h3{color:#173b55}a{color:#075985}.note{padding:14px;border-left:4px solid #d97706;background:#fffbeb;border-radius:6px}.exercise{border:1px solid #dbe4ee;border-radius:10px;padding:16px;margin:16px 0}table{width:100%;border-collapse:collapse;margin:10px 0}th,td{padding:9px;border:1px solid #dbe4ee;text-align:left;vertical-align:top}th{background:#edf5fb}.test{background:#f0fdf4;padding:10px;border-radius:6px}details{border:1px solid #bfdbfe;border-radius:8px;margin:12px 0}summary{background:#eff6ff;padding:12px;cursor:pointer;font-weight:700;color:#0c4a6e}.answer{padding:0 15px 15px}pre{white-space:pre;overflow:auto;padding:14px;background:#0f172a;color:#e2e8f0;border-radius:8px}code{font-family:Consolas,monospace}footer{font-size:13px;color:#475569;margin-top:30px}@media(max-width:700px){main{margin:0;padding:16px;border:0}table{display:block;overflow-x:auto}}</style></head><body><main><header><p>IFSP-SJP · Lógica de Programação Básica e Construção de Algoritmos</p><h1>Atividade integrada — Módulo 2</h1><p>Tipos, atribuição e operações aritméticas · 19/10/2026</p></header><section><h2>Encontro presencial</h2><p>Este módulo compartilha as 2 horas presenciais do encontro com o Módulo 1. O professor selecionará os exercícios a trabalhar em aula; os demais ficam para estudo e retomada.</p><p>Para cada exercício presencial: identifique entrada, processamento e saída; escreva pseudocódigo estruturado; implemente em C; execute o caso de teste; depure por teste de mesa.</p><p class="note"><strong>Organização:</strong> são quatro exercícios e um desafio opcional. A lista é um repertório para seleção do professor, não uma exigência de resolver todos durante as 2 horas do encontro.</p><article class="exercise" id="ex1"><h3>Exercício 1 — Caixas de parafusos</h3><p>Leia o total de parafusos e a capacidade inteira de cada caixa, maior que zero. Mostre quantas caixas completas podem ser montadas e quantos parafusos sobram.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>total e capacidade: int; capacidade &gt; 0</td><td>caixas = total / capacidade; sobra = total % capacidade</td><td>caixas completas e sobra</td></tr></table><p class="test"><strong>Caso de teste:</strong> total 127, capacidade 12 → <strong>resultado esperado:</strong> Caixas: 10; sobra: 7</p></article>
+<article class="exercise" id="ex2"><h3>Exercício 2 — Média de três medições</h3><p>Leia três medições reais e apresente a média com duas casas decimais. Use parênteses para deixar explícita a soma antes da divisão.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>três valores float</td><td>media = (a + b + c) / 3.0f</td><td>média com duas casas</td></tr></table><p class="test"><strong>Caso de teste:</strong> 7.0, 8.0, 9.0 → <strong>resultado esperado:</strong> Media: 8.00</p></article>
+<article class="exercise" id="ex3"><h3>Exercício 3 — Pagamento de horas extras</h3><p>Leia horas normais inteiras, horas extras inteiras e valor real da hora. Cada hora extra é paga com adicional de 50%. Mostre o pagamento total com duas casas.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>horas normais e extras: int; valor da hora: float</td><td>total = normais × valor + extras × valor × 1.5</td><td>pagamento total</td></tr></table><p class="test"><strong>Caso de teste:</strong> 40 horas normais, 2 extras, R$ 18.50 por hora → <strong>resultado esperado:</strong> Pagamento: R$ 795.50</p></article>
+<article class="exercise" id="ex4"><h3>Exercício 4 — Duração em horas, minutos e segundos</h3><p>Leia uma duração inteira não negativa em segundos. Decomponha em horas completas, minutos restantes e segundos finais.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>totalSegundos: int não negativo</td><td>horas = total / 3600; minutos = (total % 3600) / 60; segundos = total % 60</td><td>horas, minutos e segundos</td></tr></table><p class="test"><strong>Caso de teste:</strong> 3672 segundos → <strong>resultado esperado:</strong> 1 h 1 min 12 s</p></article><article class="exercise"><h3>Desafio opcional — Desconto em uma compra</h3><p>Leia quantidade inteira, preço unitário real e percentual real de desconto. Calcule subtotal, valor do desconto e total final. Considere percentual entre 0 e 100.</p><p class="test"><strong>Caso de teste:</strong> 3 unidades a R$ 12.50, desconto de 10% → <strong>resultado esperado:</strong> Subtotal: R$ 37.50; desconto: R$ 3.75; total: R$ 33.75</p></article><h3>Entrega e conferência</h3><p>Para os exercícios selecionados, mostre a análise do problema, o programa C, a saída obtida e um teste de mesa que explique o valor das variáveis. Entregue também o pseudocódigo estruturado.</p></section><section><h2>Gabarito docente</h2><p>Abra cada solução depois da tentativa dos estudantes. Os programas usam apenas os recursos introdutórios estudados até este módulo.</p><details><summary>Exercício 1 — Caixas de parafusos</summary><div class="answer"><p><strong>Resposta esperada:</strong> A divisão inteira fornece 10 caixas e o resto fornece 7 parafusos.</p><h4>Pseudocódigo estruturado</h4><pre><code>VAR
+    inteiro total, capacidade, caixas, sobra
+INÍCIO
+    leia(total, capacidade)
+    caixas &lt;- total / capacidade
+    sobra &lt;- total % capacidade
+    escreva(caixas, sobra)
+FIM</code></pre><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int total, capacidade, caixas, sobra;
+    scanf(&quot;%d %d&quot;, &amp;total, &amp;capacidade);
+    caixas = total / capacidade;
+    sobra = total % capacidade;
+    printf(&quot;Caixas: %d; sobra: %d\n&quot;, caixas, sobra);
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>Após ler 127 e 12, 127 / 12 vale 10 no tipo int; 127 % 12 vale 7. Confira 10 × 12 + 7 = 127. Se a sobra for 0, todas as caixas ficam completas.</p></div></details>
+<details><summary>Exercício 2 — Média de três medições</summary><div class="answer"><p><strong>Resposta esperada:</strong> A soma é 24; dividida por 3 produz 8.00.</p><h4>Pseudocódigo estruturado</h4><pre><code>VAR
+    real a, b, c, media
+INÍCIO
+    leia(a, b, c)
+    media &lt;- (a + b + c) / 3
+    escreva(media)
+FIM</code></pre><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    float a, b, c, media;
+    scanf(&quot;%f %f %f&quot;, &amp;a, &amp;b, &amp;c);
+    media = (a + b + c) / 3.0f;
+    printf(&quot;Media: %.2f\n&quot;, media);
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>Depois da leitura, a=7, b=8 e c=9. A soma entre parênteses vale 24; media recebe 8. Compare com a expressão sem parênteses, que soma 7 + 8 + 9/3 e dá 18, um erro lógico.</p></div></details>
+<details><summary>Exercício 3 — Pagamento de horas extras</summary><div class="answer"><p><strong>Resposta esperada:</strong> 740.00 pelas horas normais mais 55.50 pelas extras totalizam 795.50.</p><h4>Pseudocódigo estruturado</h4><pre><code>VAR
+    inteiro normais, extras
+    real valorHora, total
+INÍCIO
+    leia(normais, extras, valorHora)
+    total &lt;- normais * valorHora + extras * valorHora * 1,5
+    escreva(total)
+FIM</code></pre><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int normais, extras;
+    float valorHora, total;
+    scanf(&quot;%d %d %f&quot;, &amp;normais, &amp;extras, &amp;valorHora);
+    total = normais * valorHora + extras * valorHora * 1.5f;
+    printf(&quot;Pagamento: R$ %.2f\n&quot;, total);
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>40 × 18.50 = 740.00; 2 × 18.50 × 1.5 = 55.50; total=795.50. O adicional incide somente sobre as horas extras.</p></div></details>
+<details><summary>Exercício 4 — Duração em horas, minutos e segundos</summary><div class="answer"><p><strong>Resposta esperada:</strong> 3600 segundos formam uma hora; restam 72, isto é, 1 minuto e 12 segundos.</p><h4>Pseudocódigo estruturado</h4><pre><code>VAR
+    inteiro total, horas, minutos, segundos
+INÍCIO
+    leia(total)
+    horas &lt;- total / 3600
+    minutos &lt;- (total % 3600) / 60
+    segundos &lt;- total % 60
+    escreva(horas, minutos, segundos)
+FIM</code></pre><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int total, horas, minutos, segundos;
+    scanf(&quot;%d&quot;, &amp;total);
+    horas = total / 3600;
+    minutos = (total % 3600) / 60;
+    segundos = total % 60;
+    printf(&quot;%d h %d min %d s\n&quot;, horas, minutos, segundos);
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>3672 / 3600 = 1; 3672 % 3600 = 72; 72 / 60 = 1; 3672 % 60 = 12. Reconstrua: 1×3600 + 1×60 + 12 = 3672.</p></div></details>
+<details><summary>Desafio opcional — Desconto em uma compra</summary><div class="answer"><p><strong>Resposta esperada:</strong> O percentual é dividido por 100 antes de multiplicar pelo subtotal.</p><h4>Pseudocódigo estruturado</h4><pre><code>VAR
+    inteiro quantidade
+    real preco, percentual, subtotal, desconto, total
+INÍCIO
+    leia(quantidade, preco, percentual)
+    subtotal &lt;- quantidade * preco
+    desconto &lt;- subtotal * percentual / 100
+    total &lt;- subtotal - desconto
+    escreva(subtotal, desconto, total)
+FIM</code></pre><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int quantidade;
+    float preco, percentual, subtotal, desconto, total;
+    scanf(&quot;%d %f %f&quot;, &amp;quantidade, &amp;preco, &amp;percentual);
+    subtotal = quantidade * preco;
+    desconto = subtotal * percentual / 100.0f;
+    total = subtotal - desconto;
+    printf(&quot;Subtotal: R$ %.2f; desconto: R$ %.2f; total: R$ %.2f\n&quot;,
+           subtotal, desconto, total);
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>subtotal=3×12.50=37.50; desconto=37.50×10/100=3.75; total=33.75. A ordem das atribuições importa: total usa desconto já calculado.</p></div></details></section><section><h2>Atividade EAD — 2h15</h2><p>Estudo individual orientado após o encontro. Faça as etapas na ordem e consulte o <a href="../dicas/painel-referencia-rapida-c.html">painel de referência rápida de C</a> somente para comandos já abordados.</p><table><tr><th scope="col">Etapa</th><th scope="col">Tempo planejado</th><th scope="col">Ação</th></tr><tr><td>Estudo e prática</td><td>1h30</td><td>Retome os tipos int e float, a atribuição, a precedência das operações, a divisão inteira e o resto; refaça os casos de teste e anote onde um tipo inadequado altera o resultado.</td></tr><tr><td>Questionário objetivo do Módulo 2</td><td>45 min</td><td>Responda no Moodle, envie a tentativa e leia os feedbacks para revisar os erros.</td></tr></table><p>Antes de executar os programas, preveja os valores após cada atribuição; compare sua previsão com a execução e refaça o teste de mesa dos exercícios de divisão e resto. Na revisão orientada, preserve o roteiro já apresentado no material assíncrono do módulo: 1h30 de estudo pessoal e 45 minutos de questionário.</p><p class="note"><strong>Registro da carga EAD:</strong> quando o questionário for o único registro no Moodle, sua conclusão representa a carga planejada do bloco EAD deste módulo (2h15), que inclui o estudo orientado. Esse registro não mede o tempo real que cada estudante dedicou às etapas.</p></section><footer>Material autocontido para leitura, prática e conferência docente. Data do encontro: 19/10/2026.</footer></main></body></html>

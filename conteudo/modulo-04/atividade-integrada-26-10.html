@@ -1,0 +1,69 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Atividade integrada — Módulo 4</title><style>body{font:16px/1.55 Arial,sans-serif;background:#f5f8fc;color:#172033;margin:0}main{max-width:980px;margin:24px auto;padding:28px;background:#fff;border:1px solid #dbe4ee;border-radius:16px}header{background:linear-gradient(135deg,#0f172a,#075985);color:#fff;padding:26px;border-radius:12px}header p{margin:4px 0}h1{margin:6px 0}h2{color:#0c4a6e;margin-top:32px}h3{color:#173b55}a{color:#075985}.note{padding:14px;border-left:4px solid #d97706;background:#fffbeb;border-radius:6px}.exercise{border:1px solid #dbe4ee;border-radius:10px;padding:16px;margin:16px 0}table{width:100%;border-collapse:collapse;margin:10px 0}th,td{padding:9px;border:1px solid #dbe4ee;text-align:left;vertical-align:top}th{background:#edf5fb}.test{background:#f0fdf4;padding:10px;border-radius:6px}details{border:1px solid #bfdbfe;border-radius:8px;margin:12px 0}summary{background:#eff6ff;padding:12px;cursor:pointer;font-weight:700;color:#0c4a6e}.answer{padding:0 15px 15px}pre{white-space:pre;overflow:auto;padding:14px;background:#0f172a;color:#e2e8f0;border-radius:8px}code{font-family:Consolas,monospace}footer{font-size:13px;color:#475569;margin-top:30px}@media(max-width:700px){main{margin:0;padding:16px;border:0}table{display:block;overflow-x:auto}}</style></head><body><main><header><p>IFSP-SJP · Lógica de Programação Básica e Construção de Algoritmos</p><h1>Atividade integrada — Módulo 4</h1><p>Estruturas condicionais e operadores lógicos · 26/10/2026</p></header><section><h2>Encontro presencial</h2><p>Este módulo compartilha as 2 horas presenciais do encontro com o Módulo 3. O professor selecionará os exercícios a trabalhar em aula; os demais ficam para estudo e retomada.</p><p>Para cada exercício presencial: identifique entrada, processamento e saída; implemente em C; execute o caso de teste; depure por teste de mesa. Um esquema ou pseudocódigo pode ajudar, mas não é entrega obrigatória.</p><p class="note"><strong>Organização:</strong> são quatro exercícios e um desafio opcional. A lista é um repertório para seleção do professor, não uma exigência de resolver todos durante as 2 horas do encontro.</p><article class="exercise" id="ex1"><h3>Exercício 1 — Aprovação por média</h3><p>Leia uma média real de 0 a 10. Mostre 'Aprovado' se a média for pelo menos 6.0; caso contrário, mostre 'Em recuperacao'.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>média real entre 0 e 10</td><td>testar media &gt;= 6.0</td><td>situação</td></tr></table><p class="test"><strong>Caso de teste:</strong> média 6.0 → <strong>resultado esperado:</strong> Aprovado</p></article>
+<article class="exercise" id="ex2"><h3>Exercício 2 — Faixa de temperatura de máquina</h3><p>Leia uma temperatura real em Celsius. Classifique: abaixo de 20 como 'Baixa'; de 20 até 70 inclusive como 'Normal'; acima de 70 como 'Alta'.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>temperatura real</td><td>if &lt;20; else if &lt;=70; else</td><td>faixa</td></tr></table><p class="test"><strong>Caso de teste:</strong> 70.0 C → <strong>resultado esperado:</strong> Normal</p></article>
+<article class="exercise" id="ex3"><h3>Exercício 3 — Código de sensor válido</h3><p>Leia uma leitura inteira. Códigos entre 0 e 1023, inclusive, são válidos; qualquer outro é inválido. Use operador lógico para testar as duas fronteiras.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>código inteiro</td><td>codigo &gt;= 0 &amp;&amp; codigo &lt;= 1023</td><td>Valido ou Invalido</td></tr></table><p class="test"><strong>Caso de teste:</strong> 1023 → <strong>resultado esperado:</strong> Valido</p></article>
+<article class="exercise" id="ex4"><h3>Exercício 4 — Prioridade de atendimento</h3><p>Leia idade inteira não negativa e indicador inteiro de deficiência (0=não, 1=sim). Mostre 'Prioritario' se a idade for pelo menos 60 ou se houver deficiência; senão, 'Comum'.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>idade e indicador</td><td>idade &gt;= 60 || deficiencia == 1</td><td>tipo de atendimento</td></tr></table><p class="test"><strong>Caso de teste:</strong> idade 35, deficiência 1 → <strong>resultado esperado:</strong> Prioritario</p></article><article class="exercise"><h3>Desafio opcional — Frete por região</h3><p>Leia uma opção inteira de região: 1 para retirada no campus, 2 para cidade, 3 para outra cidade. Mostre o frete fixo R$ 0.00, R$ 8.00 ou R$ 15.00, respectivamente; para outra opção, mostre 'Opcao invalida'.</p><p class="test"><strong>Caso de teste:</strong> opção 3 → <strong>resultado esperado:</strong> Frete: R$ 15.00</p></article><h3>Entrega e conferência</h3><p>Para os exercícios selecionados, mostre a análise do problema, o programa C, a saída obtida e um teste de mesa que explique o valor das variáveis. A escrita formal de pseudocódigo não é exigida.</p></section><section><h2>Gabarito docente</h2><p>Abra cada solução depois da tentativa dos estudantes. Os programas usam apenas os recursos introdutórios estudados até este módulo.</p><details><summary>Exercício 1 — Aprovação por média</summary><div class="answer"><p><strong>Resposta esperada:</strong> O limite 6.0 pertence ao ramo de aprovação.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    float media;
+    scanf(&quot;%f&quot;, &amp;media);
+    if (media &gt;= 6.0f) {
+        printf(&quot;Aprovado\n&quot;);
+    } else {
+        printf(&quot;Em recuperacao\n&quot;);
+    }
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>media=6.0; 6.0&gt;=6.0 é verdadeiro; imprime Aprovado. Teste também 5.9: a condição é falsa e imprime Em recuperacao.</p></div></details>
+<details><summary>Exercício 2 — Faixa de temperatura de máquina</summary><div class="answer"><p><strong>Resposta esperada:</strong> 70.0 integra a faixa normal; acima desse valor é alta.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    float temperatura;
+    scanf(&quot;%f&quot;, &amp;temperatura);
+    if (temperatura &lt; 20.0f) {
+        printf(&quot;Baixa\n&quot;);
+    } else if (temperatura &lt;= 70.0f) {
+        printf(&quot;Normal\n&quot;);
+    } else {
+        printf(&quot;Alta\n&quot;);
+    }
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>Com 70, o primeiro teste é falso e o segundo é verdadeiro. Teste 19.9, 20.0 e 70.1 para verificar as duas fronteiras.</p></div></details>
+<details><summary>Exercício 3 — Código de sensor válido</summary><div class="answer"><p><strong>Resposta esperada:</strong> As duas comparações são verdadeiras para 1023.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int codigo;
+    scanf(&quot;%d&quot;, &amp;codigo);
+    if (codigo &gt;= 0 &amp;&amp; codigo &lt;= 1023) {
+        printf(&quot;Valido\n&quot;);
+    } else {
+        printf(&quot;Invalido\n&quot;);
+    }
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>1023&gt;=0 é verdadeiro e 1023&lt;=1023 também. Com 1024, a segunda parte é falsa e o resultado é Invalido.</p></div></details>
+<details><summary>Exercício 4 — Prioridade de atendimento</summary><div class="answer"><p><strong>Resposta esperada:</strong> O indicador 1 torna a condição verdadeira mesmo com idade abaixo de 60.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int idade, deficiencia;
+    scanf(&quot;%d %d&quot;, &amp;idade, &amp;deficiencia);
+    if (idade &gt;= 60 || deficiencia == 1) {
+        printf(&quot;Prioritario\n&quot;);
+    } else {
+        printf(&quot;Comum\n&quot;);
+    }
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>35&gt;=60 é falso; 1==1 é verdadeiro; falso OU verdadeiro é verdadeiro. Com 35 e 0, o resultado é Comum.</p></div></details>
+<details><summary>Desafio opcional — Frete por região</summary><div class="answer"><p><strong>Resposta esperada:</strong> A opção 3 seleciona o terceiro valor fixo; outras opções não têm frete calculado.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int regiao;
+    scanf(&quot;%d&quot;, &amp;regiao);
+    if (regiao == 1) {
+        printf(&quot;Frete: R$ 0.00\n&quot;);
+    } else if (regiao == 2) {
+        printf(&quot;Frete: R$ 8.00\n&quot;);
+    } else if (regiao == 3) {
+        printf(&quot;Frete: R$ 15.00\n&quot;);
+    } else {
+        printf(&quot;Opcao invalida\n&quot;);
+    }
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>Com regiao=3, os testes para 1 e 2 são falsos; o teste para 3 é verdadeiro e exibe R$ 15.00. Com regiao=4, todos os testes são falsos e a saída é Opcao invalida.</p></div></details></section><section><h2>Atividade EAD — 2h15</h2><p>Estudo individual orientado após o encontro. Faça as etapas na ordem e consulte o <a href="../dicas/painel-referencia-rapida-c.html">painel de referência rápida de C</a> somente para comandos já abordados.</p><table><tr><th scope="col">Etapa</th><th scope="col">Tempo planejado</th><th scope="col">Ação</th></tr><tr><td>Estudo e prática</td><td>1h30</td><td>Revise comparações, if, else if, else e os operadores &amp;&amp; e ||; trace caminhos diferentes para cada condição.</td></tr><tr><td>Questionário objetivo do Módulo 4</td><td>45 min</td><td>Responda no Moodle, envie a tentativa e leia os feedbacks para revisar os erros.</td></tr></table><p>Para cada programa escolhido, execute ao menos um caso que satisfaça a condição e outro que não a satisfaça. Identifique qual ramo foi executado e por quê antes do questionário.</p><p class="note"><strong>Registro da carga EAD:</strong> quando o questionário for o único registro no Moodle, sua conclusão representa a carga planejada do bloco EAD deste módulo (2h15), que inclui o estudo orientado. Esse registro não mede o tempo real que cada estudante dedicou às etapas.</p></section><footer>Material autocontido para leitura, prática e conferência docente. Data do encontro: 26/10/2026.</footer></main></body></html>

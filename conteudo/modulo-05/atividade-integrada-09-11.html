@@ -1,0 +1,64 @@
+<!doctype html><html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Atividade integrada — Módulo 5</title><style>body{font:16px/1.55 Arial,sans-serif;background:#f5f8fc;color:#172033;margin:0}main{max-width:980px;margin:24px auto;padding:28px;background:#fff;border:1px solid #dbe4ee;border-radius:16px}header{background:linear-gradient(135deg,#0f172a,#075985);color:#fff;padding:26px;border-radius:12px}header p{margin:4px 0}h1{margin:6px 0}h2{color:#0c4a6e;margin-top:32px}h3{color:#173b55}a{color:#075985}.note{padding:14px;border-left:4px solid #d97706;background:#fffbeb;border-radius:6px}.exercise{border:1px solid #dbe4ee;border-radius:10px;padding:16px;margin:16px 0}table{width:100%;border-collapse:collapse;margin:10px 0}th,td{padding:9px;border:1px solid #dbe4ee;text-align:left;vertical-align:top}th{background:#edf5fb}.test{background:#f0fdf4;padding:10px;border-radius:6px}details{border:1px solid #bfdbfe;border-radius:8px;margin:12px 0}summary{background:#eff6ff;padding:12px;cursor:pointer;font-weight:700;color:#0c4a6e}.answer{padding:0 15px 15px}pre{white-space:pre;overflow:auto;padding:14px;background:#0f172a;color:#e2e8f0;border-radius:8px}code{font-family:Consolas,monospace}footer{font-size:13px;color:#475569;margin-top:30px}@media(max-width:700px){main{margin:0;padding:16px;border:0}table{display:block;overflow-x:auto}}</style></head><body><main><header><p>IFSP-SJP · Lógica de Programação Básica e Construção de Algoritmos</p><h1>Atividade integrada — Módulo 5</h1><p>Estruturas de repetição · 09/11/2026</p></header><section><h2>Encontro presencial</h2><p>Este módulo ocupa o encontro presencial de 2 horas. O professor selecionará os exercícios para trabalho em aula e poderá retomar os demais depois.</p><p>Para cada exercício presencial: identifique entrada, processamento e saída; implemente em C; execute o caso de teste; depure por teste de mesa. Um esquema ou pseudocódigo pode ajudar, mas não é entrega obrigatória.</p><p class="note"><strong>Organização:</strong> são quatro exercícios e um desafio opcional. A lista é um repertório para seleção do professor, não uma exigência de resolver todos durante as 2 horas do encontro.</p><article class="exercise" id="ex1"><h3>Exercício 1 — Soma de 1 até N</h3><p>Leia N inteiro de 1 a 100. Some os inteiros de 1 a N com for e mostre o total.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>N entre 1 e 100</td><td>acumular i para i=1..N</td><td>soma inteira</td></tr></table><p class="test"><strong>Caso de teste:</strong> N=5 → <strong>resultado esperado:</strong> Soma: 15</p></article>
+<article class="exercise" id="ex2"><h3>Exercício 2 — Contar valores até sentinela</h3><p>Leia inteiros não negativos até receber -1. Mostre quantos valores válidos foram lidos. O -1 encerra e não entra na contagem.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>sequência de inteiros não negativos terminada em -1</td><td>while valor != -1, contar e ler o próximo</td><td>quantidade</td></tr></table><p class="test"><strong>Caso de teste:</strong> 4, 0, 9, -1 → <strong>resultado esperado:</strong> Quantidade: 3</p></article>
+<article class="exercise" id="ex3"><h3>Exercício 3 — Menu até sair</h3><p>Leia repetidamente uma opção inteira com do while. A opção 1 mostra 'Continuar'; a opção 0 mostra 'Sair' e encerra. Para outra opção, mostre 'Opcao invalida'.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>opções inteiras até 0</td><td>executar menu ao menos uma vez; repetir enquanto opção != 0</td><td>uma mensagem por opção</td></tr></table><p class="test"><strong>Caso de teste:</strong> 1, 7, 0 → <strong>resultado esperado:</strong> Continuar; Opcao invalida; Sair (uma mensagem por linha)</p></article>
+<article class="exercise" id="ex4"><h3>Exercício 4 — Contar dígitos decimais</h3><p>Leia inteiro não negativo. Conte seus dígitos em base 10 usando while. O número 0 possui um dígito.</p><table><tr><th scope="col">Entrada</th><th scope="col">Processamento</th><th scope="col">Saída</th></tr><tr><td>N &gt;= 0</td><td>iniciar contagem 1; enquanto n&gt;=10, dividir por 10 e incrementar</td><td>número de dígitos</td></tr></table><p class="test"><strong>Caso de teste:</strong> N=4052 → <strong>resultado esperado:</strong> Digitos: 4</p></article><article class="exercise"><h3>Desafio opcional — Tabuada de um número</h3><p>Leia N inteiro de 0 a 10. Mostre os dez produtos N×1 até N×10, um por linha, usando for.</p><p class="test"><strong>Caso de teste:</strong> N=3 → <strong>resultado esperado:</strong> Dez linhas: primeira 3 x 1 = 3; última 3 x 10 = 30</p></article><h3>Entrega e conferência</h3><p>Para os exercícios selecionados, mostre a análise do problema, o programa C, a saída obtida e um teste de mesa que explique o valor das variáveis. A escrita formal de pseudocódigo não é exigida.</p></section><section><h2>Gabarito docente</h2><p>Abra cada solução depois da tentativa dos estudantes. Os programas usam apenas os recursos introdutórios estudados até este módulo.</p><details><summary>Exercício 1 — Soma de 1 até N</summary><div class="answer"><p><strong>Resposta esperada:</strong> A sequência 1+2+3+4+5 soma 15.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int n, i, soma = 0;
+    scanf(&quot;%d&quot;, &amp;n);
+    for (i = 1; i &lt;= n; i++) {
+        soma = soma + i;
+    }
+    printf(&quot;Soma: %d\n&quot;, soma);
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>soma inicia em 0; após i=1,2,3,4,5, assume 1,3,6,10,15. Em i=6, 6&lt;=5 é falso e o laço termina.</p></div></details>
+<details><summary>Exercício 2 — Contar valores até sentinela</summary><div class="answer"><p><strong>Resposta esperada:</strong> Foram lidos três valores antes da sentinela.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int valor, quantidade = 0;
+    scanf(&quot;%d&quot;, &amp;valor);
+    while (valor != -1) {
+        quantidade++;
+        scanf(&quot;%d&quot;, &amp;valor);
+    }
+    printf(&quot;Quantidade: %d\n&quot;, quantidade);
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>Com 4, quantidade=1; com 0, quantidade=2; com 9, quantidade=3; com -1, a condição falha. Se a primeira entrada for -1, imprime 0.</p></div></details>
+<details><summary>Exercício 3 — Menu até sair</summary><div class="answer"><p><strong>Resposta esperada:</strong> O menu processa três opções; a última encerra a repetição.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int opcao;
+    do {
+        scanf(&quot;%d&quot;, &amp;opcao);
+        if (opcao == 1) {
+            printf(&quot;Continuar\n&quot;);
+        } else if (opcao == 0) {
+            printf(&quot;Sair\n&quot;);
+        } else {
+            printf(&quot;Opcao invalida\n&quot;);
+        }
+    } while (opcao != 0);
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>Na primeira volta, opção=1 e o laço continua; na segunda, 7 também continua; na terceira, 0 imprime Sair e a condição final é falsa. Mesmo 0 como primeira entrada é processado uma vez.</p></div></details>
+<details><summary>Exercício 4 — Contar dígitos decimais</summary><div class="answer"><p><strong>Resposta esperada:</strong> 4052 → 405 → 40 → 4, portanto quatro dígitos.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int n, digitos = 1;
+    scanf(&quot;%d&quot;, &amp;n);
+    while (n &gt;= 10) {
+        n = n / 10;
+        digitos++;
+    }
+    printf(&quot;Digitos: %d\n&quot;, digitos);
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>n=4052, digitos=1; iterações: (405,2), (40,3), (4,4). Como 4&gt;=10 é falso, imprime 4. Para n=0, nenhuma iteração ocorre e a resposta fica 1.</p></div></details>
+<details><summary>Desafio opcional — Tabuada de um número</summary><div class="answer"><p><strong>Resposta esperada:</strong> O multiplicador percorre todos os valores de 1 a 10, inclusive.</p><h4>Programa C completo</h4><pre><code>#include &lt;stdio.h&gt;
+
+int main(void) {
+    int n, i;
+    scanf(&quot;%d&quot;, &amp;n);
+    for (i = 1; i &lt;= 10; i++) {
+        printf(&quot;%d x %d = %d\n&quot;, n, i, n * i);
+    }
+    return 0;
+}</code></pre><h4>Teste de mesa e depuração</h4><p>Com n=3, i=1 imprime 3; i=2 imprime 6; ... i=10 imprime 30. O próximo i=11 falha na condição e nenhuma linha extra aparece.</p></div></details></section><section><h2>Atividade EAD — 4h30</h2><p>Estudo individual orientado após o encontro. Faça as etapas na ordem e consulte o <a href="../dicas/painel-referencia-rapida-c.html">painel de referência rápida de C</a> somente para comandos já abordados.</p><table><tr><th scope="col">Etapa</th><th scope="col">Tempo planejado</th><th scope="col">Ação</th></tr><tr><td>Estudo e prática</td><td>3h45</td><td>Compare for, while e do while em situações com número conhecido de repetições, condição de parada e execução obrigatória ao menos uma vez.</td></tr><tr><td>Questionário objetivo do Módulo 5</td><td>45 min</td><td>Responda no Moodle, envie a tentativa e leia os feedbacks para revisar os erros.</td></tr></table><p>Refaça pelo menos dois testes de mesa completos: registre cada iteração, o valor do contador e o acumulador. Experimente o caso mínimo de cada laço e responda ao questionário.</p><p class="note"><strong>Registro da carga EAD:</strong> quando o questionário for o único registro no Moodle, sua conclusão representa a carga planejada do bloco EAD deste módulo (4h30), que inclui o estudo orientado. Esse registro não mede o tempo real que cada estudante dedicou às etapas.</p></section><footer>Material autocontido para leitura, prática e conferência docente. Data do encontro: 09/11/2026.</footer></main></body></html>

@@ -1,0 +1,13 @@
+# Assunto personalizado — vídeo do Módulo 1
+
+Copie as instruções abaixo para o campo de personalização do gerador de vídeo do NotebookLM.
+
+**Estilo Visual:** "Estilo de ilustração em quadro branco (*whiteboard*) limpo e didático, com desenhos feitos à mão em marcadores preto e azul. Use diagramas simples de entrada, processamento e saída; um fluxograma sequencial sem decisões ou repetições; cartões visuais para as variáveis; e blocos de código C em caixas destacadas com tipografia monoespaçada, grande e legível. Mantenha alto contraste, pouco conteúdo por quadro e espaço suficiente para mostrar o código completo sem cortar nem alterar caracteres. Evite elementos decorativos que desviem a atenção."
+
+**Direcionamento de Conteúdo e Roteiro:** "Crie uma aula explicativa de 3 a 5 minutos para estudantes iniciantes absolutos em programação. Com base nas fontes deste caderno, apresente o tema do Módulo 1: lógica e algoritmos; análise de um problema em entrada, processamento e saída; pseudocódigo, fluxograma e programa em C como representações da solução; variáveis `int` e `float`; atribuição e operações aritméticas básicas; leitura com `scanf`, exibição com `printf`, execução, teste de mesa e depuração. Comece com um problema simples de calcular o custo de componentes, usando quantidade 8 e preço unitário 0.75. Mostre como identificar os dados de entrada, o cálculo e o resultado esperado de 6.00. Organize a explicação na sequência problema → pseudocódigo estruturado → fluxograma sequencial → implementação em C → execução → teste de mesa e depuração. Explique cada etapa antes de apresentar a seguinte. Mostre o pseudocódigo antes do código C e destaque brevemente a função de cada parte. Use somente conceitos e recursos do Módulo 1; não inclua condicionais, repetições, vetores, funções ou conteúdos de módulos posteriores. Garanta que a narração e todos os textos dos quadros estejam em Português do Brasil (PT-BR). Ao exibir código, reproduza exatamente os trechos textuais presentes nas fontes, preservando sintaxe, nomes, aspas retas, pontuação, especificadores, indentação e quebras de linha. Não gere código novo nem tente reconstruir caracteres ilegíveis em imagens. Encerre com uma síntese visual do caminho de resolução e uma pergunta-desafio sobre calcular o custo de outro conjunto de itens, sem dar a resposta." 
+
+## Conferência antes de usar o vídeo
+
+- Verifique se o vídeo cobre os tópicos do Módulo 1 sem antecipar estruturas de controle ou conteúdos posteriores.
+- Confira a sequência didática, a correção do resultado `8 × 0.75 = 6.00` e a legibilidade dos quadros.
+- Compare todo código exibido com o texto das fontes; corrija ou regenere o vídeo se houver caracteres, pontuação ou indentação incorretos.

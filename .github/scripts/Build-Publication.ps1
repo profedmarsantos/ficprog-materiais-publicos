@@ -1,8 +1,9 @@
 param(
-    [string]$RepositoryRoot = (Resolve-Path (Join-Path $PSScriptRoot '../..')).Path
+    [string]$RepositoryRoot
 )
 
 $ErrorActionPreference = 'Stop'
+if (-not $RepositoryRoot) { $RepositoryRoot = (Resolve-Path (Join-Path $PSScriptRoot '../..')).Path }
 $contentRoot = Join-Path $RepositoryRoot 'conteudo'
 $publicationRoot = Join-Path $RepositoryRoot 'publicacao'
 $utf8NoBom = [System.Text.UTF8Encoding]::new($false)
@@ -37,11 +38,8 @@ function Convert-ModuleActivity {
     param([System.IO.FileInfo]$SourceFile, [string]$ModuleNumber)
 
     $html = [System.IO.File]::ReadAllText($SourceFile.FullName, [System.Text.Encoding]::UTF8)
-    if ([regex]::IsMatch($html, '<h2\b[^>]*>\s*Gabarito\s*</h2>', 'IgnoreCase,Singleline')) {
-        throw "A atividade-fonte ainda contém um gabarito docente: $($SourceFile.FullName)"
-    }
-
     $html = $html.Replace('../dicas/painel-referencia-rapida-c.html', 'referencia-rapida-c.html')
+    if ($html -match '(?is)<html\b') { return $html }
     $title = Get-HtmlTitle $html
     if (-not $title) { $title = "Atividade do Módulo $ModuleNumber" }
 
@@ -62,7 +60,29 @@ function Convert-ModuleActivity {
 "@
 }
 
+function Convert-MarkdownResource {
+    param([System.IO.FileInfo]$SourceFile, [string]$Title)
+
+    $pandoc = Get-Command pandoc -ErrorAction Stop
+    $body = (& $pandoc.Source $SourceFile.FullName '--from=gfm' '--to=html' '--wrap=none' | Out-String)
+    if ($LASTEXITCODE -ne 0) { throw "Pandoc falhou: $($SourceFile.FullName)" }
+    $safeTitle = [System.Net.WebUtility]::HtmlEncode($Title)
+    return @"
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>$safeTitle</title>
+  <style>body{font:17px/1.65 system-ui,Arial,sans-serif;color:#172033;max-width:900px;margin:32px auto;padding:0 20px}h1,h2,h3{color:#075985}pre{background:#0f172a;color:#e2e8f0;padding:16px;overflow:auto;border-radius:8px}code{font-family:ui-monospace,Consolas,monospace}table{border-collapse:collapse;width:100%}td,th{border:1px solid #dbe4ee;padding:8px}a{color:#075985}</style>
+</head>
+<body>$body</body>
+</html>
+"@
+}
+
 $moduleEntries = @()
+$resourceEntries = @()
 foreach ($moduleDirectory in (Get-ChildItem -LiteralPath $contentRoot -Directory -Filter 'modulo-*' | Sort-Object Name)) {
     $activity = Get-ModuleActivity $moduleDirectory
     if (-not $activity) { continue }
@@ -77,6 +97,24 @@ foreach ($moduleDirectory in (Get-ChildItem -LiteralPath $contentRoot -Directory
 
     Write-Utf8File (Join-Path $publicationRoot $outputName) (Convert-ModuleActivity $activity $moduleNumber)
     $moduleEntries += [pscustomobject]@{ File = $outputName; Label = $label; Heading = $heading }
+
+    foreach ($xmlName in @('lista-exercicios-sincrona.xml', 'questionario-assincrono.xml')) {
+        $sourceXml = Join-Path $moduleDirectory.FullName $xmlName
+        if (-not (Test-Path -LiteralPath $sourceXml)) { throw "XML obrigatório ausente: $sourceXml" }
+        $targetName = "$($moduleDirectory.Name)-$xmlName"
+        Copy-Item -LiteralPath $sourceXml -Destination (Join-Path $publicationRoot $targetName) -Force
+        $kindXml = if ($xmlName -like 'lista-*') { 'lista discursiva Moodle XML' } else { 'questionário Moodle XML' }
+        $resourceEntries += [pscustomobject]@{ File = $targetName; Label = "Módulo $moduleNumber - $kindXml" }
+    }
+
+    foreach ($videoKind in @('roteiro-video', 'video')) {
+        $sourceVideo = Join-Path $moduleDirectory.FullName "$videoKind-modulo-$moduleNumber-notebooklm.md"
+        if (-not (Test-Path -LiteralPath $sourceVideo)) { throw "Material de vídeo ausente: $sourceVideo" }
+        $videoTitle = if ($videoKind -eq 'roteiro-video') { "Módulo $moduleNumber - roteiro de vídeo" } else { "Módulo $moduleNumber - instrução de vídeo" }
+        $targetName = "$($moduleDirectory.Name)-$videoKind.html"
+        Write-Utf8File (Join-Path $publicationRoot $targetName) (Convert-MarkdownResource (Get-Item -LiteralPath $sourceVideo) $videoTitle)
+        $resourceEntries += [pscustomobject]@{ File = $targetName; Label = $videoTitle }
+    }
 }
 
 $referenceSource = Join-Path $contentRoot 'dicas/painel-referencia-rapida-c.html'
@@ -97,7 +135,7 @@ Write-Utf8File (Join-Path $publicationRoot 'referencia-rapida-c.html') @"
 "@
 
 $links = @(
-    foreach ($entry in $moduleEntries) {
+    foreach ($entry in @($moduleEntries) + @($resourceEntries)) {
         "        <li><a href=`"$($entry.File)`">$([System.Net.WebUtility]::HtmlEncode($entry.Label))</a></li>"
     }
     '        <li><a href="referencia-rapida-c.html">Painel de referencia rapida de C</a></li>'
@@ -140,7 +178,7 @@ $index = @"
 $links
       </ul>
     </section>
-    <p class="note">O questionario objetivo sera disponibilizado no Moodle quando o ambiente voltar a funcionar.</p>
+    <p class="note">O pacote inclui atividades com gabaritos, materiais de vídeo e bancos Moodle XML para download.</p>
   </main>
 </body>
 </html>
