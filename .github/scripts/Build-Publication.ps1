@@ -6,6 +6,7 @@ $ErrorActionPreference = 'Stop'
 $contentRoot = Join-Path $RepositoryRoot 'conteudo'
 $publicationRoot = Join-Path $RepositoryRoot 'publicacao'
 $utf8NoBom = [System.Text.UTF8Encoding]::new($false)
+[System.IO.Directory]::CreateDirectory($publicationRoot) | Out-Null
 
 function Write-Utf8File {
     param([string]$Path, [string]$Content)
