@@ -1,0 +1,9 @@
+# Este repositório é usado para publicar somente o site estático.
+# Ignore tudo por padrão e permita apenas o pacote público e o fluxo do Pages.
+/*
+!/publicacao/
+!/publicacao/**
+!/.github/
+!/.github/workflows/
+!/.github/workflows/deploy-pages.yml
+!/.gitignore
