@@ -18,6 +18,8 @@ function Convert-IntegratedActivity {
     $html = [System.IO.File]::ReadAllText($file.FullName, [System.Text.Encoding]::UTF8)
     $html = [regex]::Replace($html, '\sstyle\s*=\s*"[^"]*"', '', 'IgnoreCase')
     $html = [regex]::Replace($html, '<\/?(?:div|section|span)\b[^>]*>', '', 'IgnoreCase')
+    # GFM has no colspan support; expand a two-column cell so Pandoc can emit a pipe table.
+    $html = [regex]::Replace($html, '<(td|th)\s+colspan\s*=\s*"2"[^>]*>(.*?)</\1>', '<$1>$2</$1><$1></$1>', 'IgnoreCase, Singleline')
     $html = [regex]::Replace($html, '<details\b[^>]*>|</details\s*>', '', 'IgnoreCase')
     $html = [regex]::Replace($html, '<summary\b[^>]*>', '<h3>', 'IgnoreCase')
     $html = [regex]::Replace($html, '</summary\s*>', '</h3>', 'IgnoreCase')
@@ -32,7 +34,6 @@ function Convert-IntegratedActivity {
         if ($LASTEXITCODE -ne 0) { throw "Pandoc falhou ao converter $($file.FullName)." }
 
         $markdown = [System.IO.File]::ReadAllText($tempMarkdown, [System.Text.Encoding]::UTF8)
-        $markdown = "<!-- Gerado automaticamente a partir do HTML; edite o HTML fonte. -->`n`n" + $markdown
         if (-not (Test-Path -LiteralPath $markdownPath) -or
             [System.IO.File]::ReadAllText($markdownPath, [System.Text.Encoding]::UTF8) -cne $markdown) {
             [System.IO.File]::WriteAllText($markdownPath, $markdown, $encoding)

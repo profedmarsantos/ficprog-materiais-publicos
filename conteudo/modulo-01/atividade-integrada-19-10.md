@@ -1,5 +1,3 @@
-<!-- Gerado automaticamente a partir do HTML; edite o HTML fonte. -->
-
 Atividade Presencial
 
 # Atividade Presencial — Módulo 1
@@ -80,35 +78,11 @@ Atividade Assíncrona
 
 Esta atividade assíncrona consolida as aprendizagens do Módulo 1. Siga os dois blocos na ordem indicada.
 
-<table>
-<thead>
-<tr>
-<th>Ordem</th>
-<th>Bloco</th>
-<th>Duração</th>
-<th>Resultado esperado</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1</td>
-<td>Revisão pessoal orientada</td>
-<td>1h30</td>
-<td>Retomar entradas, processamento, saídas, tipos, atribuição e operações básicas.</td>
-</tr>
-<tr>
-<td>2</td>
-<td>Questionário Moodle</td>
-<td>45 min</td>
-<td>Enviar uma tentativa e consultar os feedbacks.</td>
-</tr>
-<tr>
-<td colspan="2">Total da atividade assíncrona</td>
-<td>2h15</td>
-<td>—</td>
-</tr>
-</tbody>
-</table>
+| Ordem | Bloco | Duração | Resultado esperado |
+|----|----|----|----|
+| 1 | Revisão pessoal orientada | 1h30 | Retomar entradas, processamento, saídas, tipos, atribuição e operações básicas. |
+| 2 | Questionário Moodle | 45 min | Enviar uma tentativa e consultar os feedbacks. |
+| Total da atividade assíncrona |  | 2h15 | — |
 
 ### 1. Revisão pessoal orientada — Módulo 1 · 1h30
 
