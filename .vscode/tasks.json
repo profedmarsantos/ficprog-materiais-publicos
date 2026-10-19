@@ -1,0 +1,44 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Watch integrated activity Markdown",
+      "type": "process",
+      "command": "pwsh.exe",
+      "args": [
+        "-NoLogo",
+        "-NoProfile",
+        "-ExecutionPolicy",
+        "Bypass",
+        "-File",
+        "${workspaceFolder}/.github/scripts/Sync-IntegratedActivityMarkdown.ps1",
+        "-RepositoryRoot",
+        "${workspaceFolder}",
+        "-Watch"
+      ],
+      "isBackground": true,
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "problemMatcher": [
+        {
+          "owner": "integrated-activity-markdown",
+          "pattern": {
+            "regexp": "^(?!)(.*)$",
+            "message": 1
+          },
+          "background": {
+            "activeOnStart": true,
+            "beginsPattern": "^Markdown watcher started\\.$",
+            "endsPattern": "^Markdown watcher stopped\\.$"
+          }
+        }
+      ],
+      "presentation": {
+        "reveal": "silent",
+        "panel": "dedicated",
+        "showReuseMessage": false
+      }
+    }
+  ]
+}
